@@ -1,0 +1,123 @@
+allprojects {
+    ext {
+        // NEVER name this block 'android'. Never name *ANY* block android
+        androidVersions = [
+                // updated 17/3/2019
+                androidXVersion  : "1.0.0",
+                livedata         : '2.0.0-rc01',
+                minSdkVersion    : 21,
+                targetSdkVersion : 28,
+                compileSdkVersion: 28,
+        ]
+        retrofit = [
+                // updated 20/06/2019
+                retrofitVersion: '2.6.0',
+                // updated 20/06/2019
+                okhttpVersion  : '3.14.2'
+        ]
+        facebookVersions = [
+                // updated 17/3/2019
+                stetho: '1.5.0'
+        ]
+        dependencies = [
+                // *** Android block
+                coreX                 : 'androidx.core:core-ktx:1.2.0-alpha02',
+                appCompatX            : 'androidx.appcompat:appcompat:1.1.0-beta01',
+                constraintLayoutX     : 'androidx.constraintlayout:constraintlayout:2.0.0-beta2',
+                recyclerviewX         : 'androidx.recyclerview:recyclerview:1.0.0',
+                annotation            : 'androidx.annotation:annotation:1.1.0',
+                design                : 'com.google.android.material:material:1.1.0-alpha07',
+                cardViewX             : 'androidx.cardview:cardview:1.0.0',
+                // *** Less important android block
+                supportV4             : "androidx.legacy:legacy-support-v4:$androidVersions.androidXVersion",
+                supportV13            : "androidx.legacy:legacy-support-v13:$androidVersions.androidXVersion",
+                customTabs            : "androidx.browser:browser:$androidVersions.androidXVersion",
+                multidex              : 'com.android.support:multidex:1.0.3',
+                // *** Arch-component ViewModel and related stuff
+                viewmodel             : 'androidx.lifecycle:lifecycle-extensions:2.0.0',
+                // *** Arch-component Navigation
+                navigationFragments   : 'androidx.navigation:navigation-fragment-ktx:2.1.0-alpha05',
+                navigationUI          : 'androidx.navigation:navigation-ui-ktx:2.1.0-alpha05',
+                // *** Dependency Injection
+                dagger                : 'com.google.dagger:dagger:2.23.2',
+                daggerCompiler        : 'com.google.dagger:dagger-compiler:2.23.2',
+                daggerAndroid         : 'com.google.dagger:dagger-android:2.23.2',
+                daggerAndroidSupport  : 'com.google.dagger:dagger-android-support:2.23.2',
+                daggerProcessor       : 'com.google.dagger:dagger-android-processor:2.23.2',
+                // *** Arch-component RoomDB
+                roomDB                : 'android.arch.persistence.room:runtime:2.1.0',
+                roomKotlinExtensions  : 'androidx.room:room-ktx:2.1.0',
+                roomRxSupport         : 'androidx.room:room-rxjava2:2.1.0',
+                roomCompiler          : 'android.arch.persistence.room:compiler:2.1.0',
+                // *** Firebase
+                firebaseCore          : 'com.google.firebase:firebase-core:17.0.0',
+                firebasePerformance   : 'com.google.firebase:firebase-perf:18.0.0',
+                // *** Crash reporting
+                crashlytics           : 'com.crashlytics.sdk.android:crashlytics:2.10.1',
+                // *** Retrofit
+                retrofit2             : "com.squareup.retrofit2:retrofit:$retrofit.retrofitVersion",
+                retrofit2GsonConverter: "com.squareup.retrofit2:converter-gson:$retrofit.retrofitVersion",
+                retrofit2RxJava2      : "com.squareup.retrofit2:adapter-rxjava2:$retrofit.retrofitVersion",
+                okHttp3               : "com.squareup.okhttp3:okhttp:$retrofit.okhttpVersion",
+                loggingInterceptor    : "com.squareup.okhttp3:logging-interceptor:$retrofit.okhttpVersion",
+                // *** JSON helpers
+                gson                  : 'com.google.code.gson:gson:2.8.5',
+                // *** RX Block
+                rxJava2               : "io.reactivex.rxjava2:rxjava:2.2.9",
+                rxAndroid             : 'io.reactivex.rxjava2:rxandroid:2.1.1',
+                rxPermissions         : 'com.github.tbruyelle:rxpermissions:0.10.2',
+                // *** Shared preferences
+                kotlinpref            : 'com.chibatching.kotpref:kotpref:2.8.0',
+                // *** Imaging
+                glide                 : 'com.github.bumptech.glide:glide:4.9.0',
+                glideCompiler         : 'com.github.bumptech.glide:compiler:4.9.0',
+                // *** Event broadcasting
+                otto                  : 'com.squareup:otto:1.3.8',
+                // *** Network Watcher
+                reactiveNetwork       : 'com.github.pwittchen:reactivenetwork-rx2:3.0.3',
+                // *** ButterKnife
+                butterKnife           : 'com.jakewharton:butterknife:8.8.1',
+                butterKnifeCompiler   : 'com.jakewharton:butterknife-compiler:8.8.1',
+                // *** Geolocation
+                googleLocation        : 'com.google.android.gms:play-services-location:16.0.0',
+                // *** Toasty (leave this at 1.3.0 as the newer versions took away functionality)
+                toast                 : 'com.github.GrenderG:Toasty:1.3.0',
+                // *** Layout stuff
+                materialPreLolipop    : 'com.github.rey5137:material:1.2.5',
+                lottie                : 'com.airbnb.android:lottie:3.0.6',
+                zxing                 : 'com.google.zxing:core:3.2.1',
+                boommenu              : 'com.nightonke:boommenu:2.1.1',
+                lovelydialog          : 'com.yarolegovich:lovely-dialog:1.1.0',
+                bottomnav             : 'it.sephiroth.android.library.bottomnavigation:bottom-navigation:3.0.0',
+                bubbleShowCase        : 'com.elconfidencial.bubbleshowcase:bubbleshowcase:1.3.1',
+                flashbar              : 'com.andrognito.flashbar:flashbar:1.0.3',
+                bubbleNavigation      : 'com.gauravk.bubblenavigation:bubblenavigation:1.0.7',
+                materialEditText      : 'com.github.florent37:materialtextfield:1.0.7',
+                shimmer               : 'com.facebook.shimmer:shimmer:0.4.0@aar',
+                // *** Animations
+                animations1           : 'androidx.core:core:1.2.0-alpha02',
+                animations2           : 'com.daimajia.easing:library:2.1@aar',
+                animations3           : 'com.daimajia.androidanimations:library:2.3@aar',
+                // *** GIF
+                gif                   : 'pl.droidsonroids.gif:android-gif-drawable:1.2.16',
+                // *** Logger
+                timberLogger          : 'com.jakewharton.timber:timber:4.7.1',
+                // *** Linting
+                kotlinLinter          : 'com.github.shyiko:ktlint:0.33.0',
+                // *** Memory leak detection
+                leakCanary            : 'com.squareup.leakcanary:leakcanary-android:2.0-alpha-2',
+                // *** RxBinding
+                rxBindingMaterial     : 'com.jakewharton.rxbinding3:rxbinding-material:3.0.0-alpha2',
+                rxView                : 'com.jakewharton.rxbinding2:rxbinding:2.1.1',
+                rxViewV7              : 'com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.1.1',
+                rxViewDesign          : 'com.jakewharton.rxbinding2:rxbinding-design:2.1.1'
+
+        ]
+        testDependencies = [
+                jUnit   : 'junit:junit:4.13-beta-3',
+                runner  : 'androidx.test:runner:1.3.0-alpha01',
+                espresso: 'androidx.test.espresso:espresso-core:3.3.0-alpha01'
+        ]
+
+    }
+}

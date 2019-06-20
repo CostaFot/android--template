@@ -1,0 +1,65 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.ext.androidVersions.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.androidVersions.minSdkVersion
+        targetSdkVersion rootProject.ext.androidVersions.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFile getDefaultProguardFile('proguard-android.txt')
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    api project(':storage')
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // Rx and Networking
+    implementation rootProject.ext.dependencies.rxJava2
+    api rootProject.ext.dependencies.gson
+    api rootProject.ext.dependencies.okHttp3
+    api rootProject.ext.dependencies.loggingInterceptor
+    api (rootProject.ext.dependencies.retrofit2) {
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+    }
+    api(rootProject.ext.dependencies.retrofit2GsonConverter) {
+        exclude group: 'com.google.code.gson', module: 'gson'
+    }
+    api(rootProject.ext.dependencies.retrofit2RxJava2) {
+        exclude group: 'io.reactivex.rxjava2', module: 'rxjava'
+    }
+
+    // Network watcher
+    api rootProject.ext.dependencies.reactiveNetwork
+
+    // Logging
+    implementation rootProject.ext.dependencies.timberLogger
+
+    // testing
+    testImplementation rootProject.ext.testDependencies.jUnit
+    androidTestImplementation rootProject.ext.testDependencies.runner
+    androidTestImplementation rootProject.ext.testDependencies.espresso
+}

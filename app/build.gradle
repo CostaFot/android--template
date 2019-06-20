@@ -1,0 +1,210 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+/*apply plugin: 'io.fabric'
+apply plugin: 'com.google.firebase.firebase-perf'*/
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+/*
+
+// Create a variable called keystorePropertiesFile, and initialize it to your
+// keystore.properties file, in the rootProject folder.
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+
+// Initialize a new Properties() object called keystoreProperties.
+def keystoreProperties = new Properties()
+
+// Load your keystore.properties file into the keystoreProperties object.
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+*/
+
+
+android {
+    compileSdkVersion rootProject.ext.androidVersions.compileSdkVersion
+    defaultConfig {
+        applicationId "com.feelsokman.androidtemplate"
+        minSdkVersion rootProject.ext.androidVersions.minSdkVersion
+        targetSdkVersion rootProject.ext.androidVersions.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "serverUrl", '"https://api.betterttv.net/"'
+    }
+    signingConfigs {
+        release {
+            /*keyAlias keystoreProperties['releaseKeyAlias']
+            keyPassword keystoreProperties['releaseKeyPassword']
+            storeFile rootProject.file("keystore.jks")
+            storePassword keystoreProperties['releaseStorePassword']*/
+        }
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources false
+            //signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            applicationIdSuffix ".release"
+            versionNameSuffix "-release"
+
+
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-debug"
+        }
+    }
+
+    flavorDimensions "style", "monetize"
+    productFlavors {
+        templateStyle {
+            dimension "style"
+            applicationIdSuffix ".templateStyle"
+            versionNameSuffix "-templateStyle"
+            resValue "string", "app_name", "Android Template"
+            versionCode 1
+            versionName "1.1"
+        }
+
+        free {
+            dimension "monetize"
+            applicationIdSuffix ".free"
+            versionNameSuffix "-free"
+        }
+
+        premium {
+            dimension "monetize"
+            applicationIdSuffix ".premium"
+            versionNameSuffix "-premium"
+        }
+    }
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/LGPL2.1'
+        exclude 'META-INF/MANIFEST.MF'
+        exclude 'META-INF/rxjava.properties'
+        exclude 'META-INF/ASL2.0'
+    }
+
+    configurations {
+        ktlint
+    }
+
+
+}
+
+dependencies {
+    implementation project(':analytics')
+    implementation project(':net')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // Basic Google components
+    implementation rootProject.ext.dependencies.coreX
+    implementation rootProject.ext.dependencies.appCompatX
+    implementation rootProject.ext.dependencies.design
+    implementation rootProject.ext.dependencies.cardViewX
+    implementation rootProject.ext.dependencies.constraintLayoutX
+    implementation rootProject.ext.dependencies.recyclerviewX
+    implementation rootProject.ext.dependencies.annotation
+    implementation rootProject.ext.dependencies.viewmodel
+
+    //Navigation
+    implementation rootProject.ext.dependencies.navigationFragments
+    implementation rootProject.ext.dependencies.navigationUI
+
+    // Rx
+    implementation rootProject.ext.dependencies.rxJava2
+    implementation rootProject.ext.dependencies.rxAndroid
+    //noinspection GradleDependency
+    implementation rootProject.ext.dependencies.rxPermissions
+    implementation rootProject.ext.dependencies.rxBindingMaterial
+
+    // Dependency Injection
+    implementation rootProject.ext.dependencies.dagger
+    kapt rootProject.ext.dependencies.daggerCompiler
+    implementation rootProject.ext.dependencies.daggerAndroid
+    implementation rootProject.ext.dependencies.daggerAndroidSupport
+    kapt rootProject.ext.dependencies.daggerProcessor
+
+    // Logging
+    implementation rootProject.ext.dependencies.timberLogger
+
+    // UI stuff
+    //noinspection GradleDependency
+    implementation rootProject.ext.dependencies.toast
+    implementation rootProject.ext.dependencies.lovelydialog
+    implementation rootProject.ext.dependencies.bubbleShowCase
+    implementation rootProject.ext.dependencies.flashbar
+    implementation rootProject.ext.dependencies.materialEditText
+    implementation rootProject.ext.dependencies.shimmer
+
+    // Imaging
+    implementation rootProject.ext.dependencies.glide
+    kapt rootProject.ext.dependencies.glideCompiler
+
+    // Gif
+    implementation rootProject.ext.dependencies.gif
+    // Lottie
+    implementation rootProject.ext.dependencies.lottie
+
+    // Animations
+    implementation rootProject.ext.dependencies.animations1
+    implementation rootProject.ext.dependencies.animations2
+    implementation rootProject.ext.dependencies.animations3
+
+    // Otto
+    implementation rootProject.ext.dependencies.otto
+
+    // Leak detection
+    debugImplementation rootProject.ext.dependencies.leakCanary
+
+    // Lint
+    ktlint rootProject.ext.dependencies.kotlinLinter
+
+    /*// Firebase performance
+    implementation rootProject.ext.dependencies.firebasePerformance
+    // Crashlytics
+    implementation rootProject.ext.dependencies.crashlytics*/
+
+    // testing
+    testImplementation rootProject.ext.testDependencies.jUnit
+    androidTestImplementation rootProject.ext.testDependencies.runner
+    androidTestImplementation rootProject.ext.testDependencies.espresso
+
+}
+
+task ktlint(type: JavaExec, group: "verification") {
+    description = "Check Kotlin code style."
+    classpath = configurations.ktlint
+    main = "com.github.shyiko.ktlint.Main"
+    args "src/**/*.kt"
+}
+check.dependsOn ktlint
+
+task ktlintFormat(type: JavaExec, group: "formatting") {
+    description = "Fix Kotlin code style deviations."
+    classpath = configurations.ktlint
+    main = "com.github.shyiko.ktlint.Main"
+    args "-F", "src/**/*.kt"
+}
+//apply plugin: 'com.google.gms.google-services'
