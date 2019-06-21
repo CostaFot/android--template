@@ -27,5 +27,4 @@ interface AppComponent : AndroidInjector<TemplateApplication> {
 
         fun build(): AppComponent
     }
-
 }

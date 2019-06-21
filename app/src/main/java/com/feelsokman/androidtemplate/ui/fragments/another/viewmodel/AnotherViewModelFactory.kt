@@ -2,7 +2,6 @@ package com.feelsokman.androidtemplate.ui.fragments.another.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.feelsokman.storage.Storage
 import io.reactivex.Scheduler
 
 class AnotherViewModelFactory(

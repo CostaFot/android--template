@@ -12,5 +12,4 @@ class MainViewModel : ViewModel() {
         Timber.d("MainViewModel cleared")
         super.onCleared()
     }
-
 }

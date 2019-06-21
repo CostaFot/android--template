@@ -47,8 +47,6 @@ class AnotherFragment : BaseFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         Toasty.error(view.context, storage.getSampleString()).show()
-
-
     }
 
     override fun onPause() {

@@ -22,7 +22,6 @@ class HostFragment : BaseFragment() {
         return inflater.inflate(R.layout.fragment_host, container, false)
     }
 
-
     @Inject
     internal lateinit var factory: HostViewModelFactory
     private lateinit var viewModelHost: HostViewModel
@@ -38,7 +37,6 @@ class HostFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
 
         button.setOnClickListener {
             findNavController().navigate(R.id.action_hostFragment_to_anotherFragment)

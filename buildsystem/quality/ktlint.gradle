@@ -1,0 +1,41 @@
+// kotlin-gradle-plugin must be applied for configuration below to work
+// (see https://kotlinlang.org/docs/reference/using-gradle.html)
+
+repositories {
+    jcenter()
+}
+
+configurations {
+    ktlint
+}
+
+dependencies {
+    ktlint 'com.github.shyiko:ktlint:0.33.0'
+    // additional 3rd party ruleset(s) can be specified here
+    // just add them to the classpath (e.g. ktlint 'groupId:artifactId:version') and 
+    // ktlint will pick them up
+}
+
+def inputFiles = project.fileTree(dir: "src", include: "**/*.kt")
+def outputDir = "${project.buildDir}/outputs/ktlint/"
+def outputFile = "${outputDir}ktlint.xml"
+
+task ktlint(type: JavaExec, group: "verification") {
+    inputs.files(inputFiles)
+    outputs.dir(outputDir)
+    description = "Check Kotlin code style."
+    classpath = configurations.ktlint
+    main = "com.github.shyiko.ktlint.Main"
+    args "--reporter=plain", "--reporter=checkstyle,output=${outputFile}", "src/**/*.kt"
+}
+
+task ktlintFormat(type: JavaExec, group: "formatting") {
+    inputs.files(inputFiles)
+    outputs.dir(outputDir)
+    description = "Fix Kotlin code style."
+    classpath = configurations.ktlint
+    main = "com.github.shyiko.ktlint.Main"
+    args "-F", "src/**/*.kt"
+}
+
+preBuild.dependsOn ktlintFormat

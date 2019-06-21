@@ -107,7 +107,6 @@ class AppModule {
         okHttpBuilder.addInterceptor(loggingInterceptor)
         okHttpBuilder.cache(cache)
 
-
         return okHttpBuilder.build()
     }
 
@@ -124,7 +123,6 @@ class AppModule {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
     }
-
 
     @Provides
     internal fun providesMainViewModelFactory() = MainViewModelFactory()

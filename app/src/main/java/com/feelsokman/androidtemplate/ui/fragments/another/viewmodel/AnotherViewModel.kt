@@ -2,7 +2,6 @@ package com.feelsokman.androidtemplate.ui.fragments.another.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.feelsokman.storage.Storage
 import io.reactivex.Scheduler
 import timber.log.Timber
 import java.util.UUID

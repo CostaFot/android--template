@@ -36,8 +36,8 @@ class MainActivity : BaseActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.hostFragment ->  Timber.d("hostFragment showing!")
-                R.id.anotherFragment ->  Timber.d("favoriteFragment showing!")
+                R.id.hostFragment -> Timber.d("hostFragment showing!")
+                R.id.anotherFragment -> Timber.d("favoriteFragment showing!")
             }
         }
 
@@ -63,4 +63,3 @@ class MainActivity : BaseActivity() {
         return true
     }
 }
-
