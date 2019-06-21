@@ -6,14 +6,11 @@ import timber.log.Timber
 
 class MainViewModel : ViewModel() {
 
-    val visibilityOfKeyboardData = MutableLiveData<Boolean>().apply { postValue(false) }
+    val booleanData = MutableLiveData<Boolean>().apply { postValue(false) }
 
     override fun onCleared() {
         Timber.d("MainViewModel cleared")
         super.onCleared()
     }
 
-    fun attemptToHideKeyboard(flag: Boolean) {
-        visibilityOfKeyboardData.postValue(flag)
-    }
 }

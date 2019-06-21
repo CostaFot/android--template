@@ -1,6 +1,6 @@
-package com.feelsokman.chatkeyboard.ui
+package com.feelsokman.androidtemplate.ui
 
 sealed class NavigationCommand {
-    object ShowPromptEnableKeyboard : NavigationCommand()
-    object ShowEditTextAndHintsView : NavigationCommand()
+    object FirstGlobalCommand : NavigationCommand()
+    object SecondGlobalCommand : NavigationCommand()
 }
