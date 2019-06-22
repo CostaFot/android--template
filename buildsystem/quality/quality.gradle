@@ -4,7 +4,7 @@ apply plugin: 'pmd'
 def checkStyleBlowOnError = false
 def findBugsBlowOnError = false // TODO find bugs is deprecated. find something else to use
 def lintBlowOnError = true
-def lintBlowOnWarning = true
+def lintBlowOnWarning = false
 def pmdBlowOnError = false
 
 ext {
