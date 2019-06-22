@@ -49,9 +49,9 @@ android {
     lintOptions {
         abortOnError lintBlowOnError
         warningsAsErrors lintBlowOnWarning
-        htmlOutput file("${reportsFolder}lint/lint.html")
-        baseline file("lint-baseline.xml")
-        htmlReport true
+        //htmlOutput file("${reportsFolder}lint/lint.html")
+        //baseline file("lint-baseline.xml")
+        //htmlReport true
     }
 }
 
