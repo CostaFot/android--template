@@ -6,6 +6,9 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'com.google.firebase.firebase-perf'*/
 apply plugin: "androidx.navigation.safeargs.kotlin"
 
+apply from: '../buildsystem/quality/quality.gradle'
+apply from: '../buildsystem/quality/ktlint.gradle'
+
 /*
 
 // Create a variable called keystorePropertiesFile, and initialize it to your
@@ -104,12 +107,6 @@ android {
         exclude 'META-INF/rxjava.properties'
         exclude 'META-INF/ASL2.0'
     }
-
-    configurations {
-        ktlint
-    }
-
-
 }
 
 dependencies {
@@ -178,9 +175,6 @@ dependencies {
     // Leak detection
     debugImplementation rootProject.ext.dependencies.leakCanary
 
-    // Lint
-    ktlint rootProject.ext.dependencies.kotlinLinter
-
     /*// Firebase performance
     implementation rootProject.ext.dependencies.firebasePerformance
     // Crashlytics
@@ -191,23 +185,5 @@ dependencies {
     androidTestImplementation rootProject.ext.testDependencies.runner
     androidTestImplementation rootProject.ext.testDependencies.espresso
 
-}
-
-task ktlint(type: JavaExec, group: "verification") {
-    description = "Check Kotlin code style."
-    main = "com.pinterest.ktlint.Main"
-    classpath = configurations.ktlint
-    args "src/**/*.kt"
-    // to generate report in checkstyle format prepend following args:
-    // "--reporter=plain", "--reporter=checkstyle,output=${buildDir}/ktlint.xml"
-    // see https://github.com/pinterest/ktlint#usage for more
-}
-check.dependsOn ktlint
-
-task ktlintFormat(type: JavaExec, group: "formatting") {
-    description = "Fix Kotlin code style deviations."
-    main = "com.pinterest.ktlint.Main"
-    classpath = configurations.ktlint
-    args "-F", "src/**/*.kt"
 }
 //apply plugin: 'com.google.gms.google-services'

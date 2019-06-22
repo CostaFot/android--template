@@ -11,6 +11,7 @@ class LocalStorage(context: Context) : KotprefModel(context), Storage {
     )
 
     override fun saveSampleString(text: String) {
+
         someText = text
     }
 

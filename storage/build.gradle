@@ -2,6 +2,9 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
+apply from: '../buildsystem/quality/quality.gradle'
+apply from: '../buildsystem/quality/ktlint.gradle'
+
 android {
     compileSdkVersion rootProject.ext.androidVersions.compileSdkVersion
 

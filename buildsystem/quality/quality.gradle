@@ -1,15 +1,14 @@
 apply plugin: 'checkstyle'
-apply plugin: 'findbugs'
 apply plugin: 'pmd'
 
 def checkStyleBlowOnError = false
-def findBugsBlowOnError = false
+def findBugsBlowOnError = false // TODO find bugs is deprecated. find something else to use
 def lintBlowOnError = true
 def lintBlowOnWarning = true
 def pmdBlowOnError = false
 
 ext {
-    qualityFolder = "${project.rootDir}/tools/quality/"
+    qualityFolder = "${project.rootDir}/buildsystem/quality/"
     reportsFolder = "${project.buildDir}/reports/"
 }
 
@@ -56,30 +55,6 @@ android {
     }
 }
 
-task findbugs(type: FindBugs) {
-    description 'Run findbugs'
-    group 'verification'
-    ignoreFailures = !findBugsBlowOnError
-
-    effort = "max"
-    reportLevel = "high"
-    def projectPath = "$projectDir/build/intermediates/javac"
-    classes = files(projectPath)
-    classpath = files()
-
-    source fileTree('src/main/java')
-    exclude staticAnalysisExcludeFiles
-    excludeFilter = new File("${qualityFolder}findbugs-filter.xml")
-
-    reports {
-        xml.enabled = false
-        html.enabled = true
-        html {
-            destination new File("${reportsFolder}findbugs/findbugs.html")
-        }
-    }
-}
-
 task pmd(type: Pmd) {
     description 'Run pmd'
     ignoreFailures = !pmdBlowOnError
@@ -107,7 +82,6 @@ task static_analysis(type: GradleBuild) {
     tasks = [
             'assembleDebug', // required for findbugs
             'pmd',
-            'findbugs',
             'checkstyle',
             'ktlint',
             'lintDebug']

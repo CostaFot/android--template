@@ -33,6 +33,8 @@ proguard/
 # Android Studio captures folder
 captures/
 
+lint-baseline.xml
+
 # IntelliJ
 *.iml
 .idea/workspace.xml
