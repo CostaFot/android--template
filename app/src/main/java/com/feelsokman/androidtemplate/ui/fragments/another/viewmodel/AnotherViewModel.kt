@@ -2,22 +2,34 @@ package com.feelsokman.androidtemplate.ui.fragments.another.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import io.reactivex.Scheduler
-import timber.log.Timber
-import java.util.UUID
+import com.feelsokman.androidtemplate.usecase.GetStringFromStorageUseCase
+import com.feelsokman.net.domain.error.DataSourceError
+import com.feelsokman.net.domain.usecases.BaseDisposableUseCase
 
-class AnotherViewModel(
-    private val scheduler: Scheduler
-) : ViewModel() {
+class AnotherViewModel(private val getStringFromStorageUseCase: GetStringFromStorageUseCase) : ViewModel() {
 
-    val textData: MutableLiveData<String> = MutableLiveData<String>().apply { postValue("Another") }
+    val textData = MutableLiveData<String>()
 
-    fun changeText() {
-        textData.postValue(UUID.randomUUID().toString())
+    fun observeStringFromStorage() {
+        if (textData.value == null) {
+            getStringFromStorageUseCase.getStringFromStorage(object : BaseDisposableUseCase.Callback<String> {
+                override fun onLoadingStarted() {
+                    // TODO
+                }
+
+                override fun onSuccess(result: String) {
+                    textData.postValue(result)
+                }
+
+                override fun onError(error: DataSourceError) {
+                    textData.postValue(error.errorMessage)
+                }
+            })
+        }
     }
 
     override fun onCleared() {
-        Timber.tag("NavigationLogger").d("AnotherViewModel cleared")
+        getStringFromStorageUseCase.stopAllBackgroundWork()
         super.onCleared()
     }
 }

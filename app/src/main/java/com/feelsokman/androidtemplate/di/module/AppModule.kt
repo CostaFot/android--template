@@ -1,12 +1,9 @@
-package com.feelsokman.androidtemplate.di
+package com.feelsokman.androidtemplate.di.module
 
 import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import com.feelsokman.androidtemplate.BuildConfig
-import com.feelsokman.androidtemplate.ui.MainViewModelFactory
-import com.feelsokman.androidtemplate.ui.fragments.another.viewmodel.AnotherViewModelFactory
-import com.feelsokman.androidtemplate.ui.fragments.host.viewmodel.HostViewModelFactory
 import com.feelsokman.net.net.resolver.NetworkResolver
 import com.feelsokman.storage.LocalStorage
 import com.feelsokman.storage.Storage
@@ -16,7 +13,6 @@ import com.google.gson.GsonBuilder
 import com.squareup.otto.Bus
 import dagger.Module
 import dagger.Provides
-import io.reactivex.Scheduler
 import io.reactivex.schedulers.Schedulers
 import okhttp3.Cache
 import okhttp3.OkHttpClient
@@ -123,13 +119,4 @@ class AppModule {
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
     }
-
-    @Provides
-    internal fun providesMainViewModelFactory() = MainViewModelFactory()
-
-    @Provides
-    internal fun providesHostViewModelFactory() = HostViewModelFactory()
-
-    @Provides
-    internal fun providesAnotherViewModelFactory(scheduler: Scheduler) = AnotherViewModelFactory(scheduler)
 }

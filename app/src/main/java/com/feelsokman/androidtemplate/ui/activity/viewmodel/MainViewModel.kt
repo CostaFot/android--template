@@ -1,4 +1,4 @@
-package com.feelsokman.androidtemplate.ui
+package com.feelsokman.androidtemplate.ui.activity.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

@@ -1,7 +1,10 @@
-package com.feelsokman.androidtemplate.di
+package com.feelsokman.androidtemplate.di.component
 
 import android.app.Application
 import com.feelsokman.androidtemplate.TemplateApplication
+import com.feelsokman.androidtemplate.di.module.ActivityBuilderModule
+import com.feelsokman.androidtemplate.di.module.AppModule
+import com.feelsokman.androidtemplate.di.module.UseCaseModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -12,9 +15,9 @@ import javax.inject.Singleton
 @Component(
     modules = [
         AndroidSupportInjectionModule::class,
+        ActivityBuilderModule::class,
         AppModule::class,
-        ActivityBuilderModule::class
-
+        UseCaseModule::class
     ]
 )
 interface AppComponent : AndroidInjector<TemplateApplication> {

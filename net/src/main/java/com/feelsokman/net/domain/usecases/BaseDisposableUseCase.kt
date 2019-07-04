@@ -1,8 +1,13 @@
 package com.feelsokman.net.domain.usecases
 
 import com.feelsokman.net.domain.error.DataSourceError
+import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
 
 abstract class BaseDisposableUseCase {
+
+    abstract val compositeDisposable: CompositeDisposable
+    abstract var latestDisposable: Disposable?
 
     interface Callback<T> {
 
@@ -13,5 +18,5 @@ abstract class BaseDisposableUseCase {
         fun onError(error: DataSourceError)
     }
 
-    abstract fun cancelAll()
+    abstract fun stopAllBackgroundWork()
 }

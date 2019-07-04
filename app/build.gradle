@@ -25,6 +25,8 @@ keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
     compileSdkVersion rootProject.ext.androidVersions.compileSdkVersion
+    testOptions.unitTests.includeAndroidResources = true
+
     defaultConfig {
         applicationId "com.feelsokman.androidtemplate"
         minSdkVersion rootProject.ext.androidVersions.minSdkVersion
@@ -73,7 +75,7 @@ android {
             versionNameSuffix "-templateStyle"
             resValue "string", "app_name", "Android Template"
             versionCode 1
-            versionName "1.1"
+            versionName "0.1"
         }
 
         free {
@@ -94,6 +96,14 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+            unitTests.returnDefaultValues = true
+        }
+    }
+
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
         exclude 'META-INF/LICENSE'
@@ -150,19 +160,12 @@ dependencies {
     //noinspection GradleDependency
     implementation rootProject.ext.dependencies.toast
     implementation rootProject.ext.dependencies.lovelydialog
-    implementation rootProject.ext.dependencies.bubbleShowCase
     implementation rootProject.ext.dependencies.flashbar
     implementation rootProject.ext.dependencies.materialEditText
     implementation rootProject.ext.dependencies.shimmer
 
-    // Imaging
-    implementation rootProject.ext.dependencies.glide
-    kapt rootProject.ext.dependencies.glideCompiler
-
     // Gif
     implementation rootProject.ext.dependencies.gif
-    // Lottie
-    implementation rootProject.ext.dependencies.lottie
 
     // Animations
     implementation rootProject.ext.dependencies.animations1
@@ -175,15 +178,36 @@ dependencies {
     // Leak detection
     debugImplementation rootProject.ext.dependencies.leakCanary
 
-    /*// Firebase performance
+    // Firebase performance
     implementation rootProject.ext.dependencies.firebasePerformance
     // Crashlytics
-    implementation rootProject.ext.dependencies.crashlytics*/
+    implementation rootProject.ext.dependencies.crashlytics
 
-    // testing
+    // testing (avoid androidTestImplementation if you can!)
     testImplementation rootProject.ext.testDependencies.jUnit
+    testImplementation rootProject.ext.testDependencies.jUnitKotlin
+    implementation rootProject.ext.testDependencies.testCoreX
+    testImplementation rootProject.ext.testDependencies.testArchCompX
+    testImplementation rootProject.ext.testDependencies.robolectric
+    testImplementation rootProject.ext.testDependencies.mockitoCore
+    testImplementation rootProject.ext.testDependencies.mockitoKotlin
+    testImplementation rootProject.ext.testDependencies.mockitoInline
+    testImplementation rootProject.ext.testDependencies.runner
+    testImplementation rootProject.ext.testDependencies.espresso
+    testImplementation rootProject.ext.testDependencies.espressoIntents
+    testImplementation rootProject.ext.testDependencies.rules
+    testImplementation rootProject.ext.testDependencies.truth
+    testImplementation rootProject.ext.testDependencies.kluent
+
+    androidTestImplementation rootProject.ext.testDependencies.jUnit
+    androidTestImplementation rootProject.ext.testDependencies.jUnitKotlin
+    androidTestImplementation rootProject.ext.testDependencies.testCoreX
     androidTestImplementation rootProject.ext.testDependencies.runner
     androidTestImplementation rootProject.ext.testDependencies.espresso
+    androidTestImplementation rootProject.ext.testDependencies.kakaoUiTesting
+
+
+    debugImplementation rootProject.ext.testDependencies.fragmentScenario
 
 }
 //apply plugin: 'com.google.gms.google-services'

@@ -1,4 +1,4 @@
-package com.feelsokman.androidtemplate.ui
+package com.feelsokman.androidtemplate.ui.activity
 
 import android.os.Bundle
 import android.view.Menu
@@ -10,6 +10,8 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.feelsokman.androidtemplate.R
+import com.feelsokman.androidtemplate.ui.activity.viewmodel.MainViewModel
+import com.feelsokman.androidtemplate.ui.activity.viewmodel.MainViewModelFactory
 import com.feelsokman.androidtemplate.ui.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
@@ -37,7 +39,7 @@ class MainActivity : BaseActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.hostFragment -> Timber.d("hostFragment showing!")
-                R.id.anotherFragment -> Timber.d("favoriteFragment showing!")
+                R.id.anotherFragment -> Timber.d("anotherFragment showing!")
             }
         }
 

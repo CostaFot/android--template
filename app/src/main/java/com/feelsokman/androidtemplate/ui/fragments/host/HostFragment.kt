@@ -8,8 +8,8 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import com.feelsokman.androidtemplate.R
-import com.feelsokman.androidtemplate.ui.MainActivity
-import com.feelsokman.androidtemplate.ui.MainViewModel
+import com.feelsokman.androidtemplate.ui.activity.MainActivity
+import com.feelsokman.androidtemplate.ui.activity.viewmodel.MainViewModel
 import com.feelsokman.androidtemplate.ui.base.BaseFragment
 import com.feelsokman.androidtemplate.ui.fragments.host.viewmodel.HostViewModel
 import com.feelsokman.androidtemplate.ui.fragments.host.viewmodel.HostViewModelFactory

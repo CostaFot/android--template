@@ -1,4 +1,4 @@
-package com.feelsokman.androidtemplate.ui
+package com.feelsokman.androidtemplate.ui.activity.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

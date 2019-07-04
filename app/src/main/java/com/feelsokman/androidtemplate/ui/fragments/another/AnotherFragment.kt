@@ -5,11 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.navArgs
 import com.feelsokman.androidtemplate.R
-import com.feelsokman.androidtemplate.ui.MainActivity
-import com.feelsokman.androidtemplate.ui.MainViewModel
+import com.feelsokman.androidtemplate.ui.activity.MainActivity
+import com.feelsokman.androidtemplate.ui.activity.viewmodel.MainViewModel
 import com.feelsokman.androidtemplate.ui.base.BaseFragment
 import com.feelsokman.androidtemplate.ui.fragments.another.viewmodel.AnotherViewModel
 import com.feelsokman.androidtemplate.ui.fragments.another.viewmodel.AnotherViewModelFactory
@@ -46,10 +47,10 @@ class AnotherFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        Toasty.error(view.context, storage.getSampleString()).show()
-    }
+        viewModelAnother.observeStringFromStorage()
 
-    override fun onPause() {
-        super.onPause()
+        viewModelAnother.textData.observe(viewLifecycleOwner, Observer { stringFromStorage ->
+            Toasty.error(view.context, stringFromStorage).show()
+        })
     }
 }

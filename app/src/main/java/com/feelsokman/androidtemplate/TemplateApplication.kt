@@ -3,8 +3,8 @@ package com.feelsokman.androidtemplate
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import com.feelsokman.androidtemplate.di.AppComponent
-import com.feelsokman.androidtemplate.di.DaggerAppComponent
+import com.feelsokman.androidtemplate.di.component.AppComponent
+import com.feelsokman.androidtemplate.di.component.DaggerAppComponent
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 import es.dmoral.toasty.Toasty
@@ -45,10 +45,5 @@ class TemplateApplication : DaggerApplication() {
         component = DaggerAppComponent.builder().application(this).build()
 
         return component
-    }
-
-    override fun onTerminate() {
-        Timber.e("onTerminate")
-        super.onTerminate()
     }
 }

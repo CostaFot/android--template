@@ -3,7 +3,6 @@ package com.feelsokman.storage
 import android.content.Context
 import com.chibatching.kotpref.KotprefModel
 
-//this is a comment
 class LocalStorage(context: Context) : KotprefModel(context), Storage {
 
     private var someText by stringPref(

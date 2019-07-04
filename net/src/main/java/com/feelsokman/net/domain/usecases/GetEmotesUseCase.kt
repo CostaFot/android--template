@@ -9,6 +9,7 @@ import com.feelsokman.net.net.resolver.NetworkResolver
 import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
+import io.reactivex.disposables.Disposable
 
 class GetEmotesUseCase(
     private val emoteApi: EmoteApi,
@@ -17,7 +18,8 @@ class GetEmotesUseCase(
     private val networkResolver: NetworkResolver
 ) : BaseDisposableUseCase() {
 
-    private val compositeDisposable = CompositeDisposable()
+    override val compositeDisposable = CompositeDisposable()
+    override var latestDisposable: Disposable? = null
 
     fun getEmotes(callback: Callback<NetResponseEmote>) {
 
@@ -42,7 +44,7 @@ class GetEmotesUseCase(
         }
     }
 
-    override fun cancelAll() {
+    override fun stopAllBackgroundWork() {
         compositeDisposable.clear()
     }
 }
