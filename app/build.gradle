@@ -126,14 +126,25 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // Basic Google components
-    implementation rootProject.ext.dependencies.coreX
     implementation rootProject.ext.dependencies.appCompatX
     implementation rootProject.ext.dependencies.design
     implementation rootProject.ext.dependencies.cardViewX
     implementation rootProject.ext.dependencies.constraintLayoutX
     implementation rootProject.ext.dependencies.recyclerviewX
     implementation rootProject.ext.dependencies.annotation
+    implementation rootProject.ext.dependencies.fragmentKtx
+
+    // ViewModel
     implementation rootProject.ext.dependencies.viewmodel
+    implementation rootProject.ext.dependencies.viewmodelKtx
+
+    // General Ktx
+    implementation rootProject.ext.dependencies.coreKtx
+    implementation rootProject.ext.dependencies.collectionsKtx
+
+    // CoRoutines
+    implementation rootProject.ext.dependencies.coroutinesCore
+    implementation rootProject.ext.dependencies.coroutinesAndroid
 
     //Navigation
     implementation rootProject.ext.dependencies.navigationFragments
@@ -152,6 +163,12 @@ dependencies {
     implementation rootProject.ext.dependencies.daggerAndroid
     implementation rootProject.ext.dependencies.daggerAndroidSupport
     kapt rootProject.ext.dependencies.daggerProcessor
+
+    // Room
+    implementation rootProject.ext.dependencies.roomDB
+    implementation rootProject.ext.dependencies.roomKotlinExtensions
+    implementation rootProject.ext.dependencies.roomRxSupport
+    kapt rootProject.ext.dependencies.roomCompiler
 
     // Logging
     implementation rootProject.ext.dependencies.timberLogger
