@@ -122,6 +122,7 @@ android {
 dependencies {
     implementation project(':analytics')
     implementation project(':net')
+    implementation project(':database')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
@@ -134,8 +135,8 @@ dependencies {
     implementation rootProject.ext.dependencies.annotation
     implementation rootProject.ext.dependencies.fragmentKtx
 
-    // ViewModel
-    implementation rootProject.ext.dependencies.viewmodel
+    // Lifecycle
+    implementation rootProject.ext.dependencies.lifecycle
     implementation rootProject.ext.dependencies.viewmodelKtx
 
     // General Ktx
@@ -163,12 +164,6 @@ dependencies {
     implementation rootProject.ext.dependencies.daggerAndroid
     implementation rootProject.ext.dependencies.daggerAndroidSupport
     kapt rootProject.ext.dependencies.daggerProcessor
-
-    // Room
-    implementation rootProject.ext.dependencies.roomDB
-    implementation rootProject.ext.dependencies.roomKotlinExtensions
-    implementation rootProject.ext.dependencies.roomRxSupport
-    kapt rootProject.ext.dependencies.roomCompiler
 
     // Logging
     implementation rootProject.ext.dependencies.timberLogger
