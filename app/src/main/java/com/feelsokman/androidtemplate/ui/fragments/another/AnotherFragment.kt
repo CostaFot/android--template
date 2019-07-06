@@ -5,17 +5,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.navArgs
 import com.feelsokman.androidtemplate.R
-import com.feelsokman.androidtemplate.ui.activity.MainActivity
 import com.feelsokman.androidtemplate.ui.activity.viewmodel.MainViewModel
 import com.feelsokman.androidtemplate.ui.base.BaseFragment
 import com.feelsokman.androidtemplate.ui.fragments.another.viewmodel.AnotherViewModel
 import com.feelsokman.androidtemplate.ui.fragments.another.viewmodel.AnotherViewModelFactory
 import com.feelsokman.storage.Storage
-import es.dmoral.toasty.Toasty
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -30,18 +29,17 @@ class AnotherFragment : BaseFragment() {
     internal lateinit var storage: Storage
     @Inject
     internal lateinit var factory: AnotherViewModelFactory
-    private lateinit var viewModelAnother: AnotherViewModel
-    private lateinit var activityViewModel: MainViewModel
+
+    // Get a reference to the ViewModel scoped to this Fragment
+    private val viewModelAnother by viewModels<AnotherViewModel>({ this }, { factory })
+    // Get a reference to the ViewModel scoped to its Activity
+    private val activityViewModel by activityViewModels<MainViewModel>()
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         // Retrieving arguments if any
         val stringArgument = args.extraAnotherFragment
         Timber.tag("NavigationLogger").d("Retrieving argument $stringArgument")
-
-        viewModelAnother = ViewModelProviders.of(this, factory).get(stringArgument, AnotherViewModel::class.java)
-
-        activityViewModel = (context as MainActivity).getActivityViewModel()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -49,8 +47,12 @@ class AnotherFragment : BaseFragment() {
 
         viewModelAnother.observeStringFromStorage()
 
+        activityViewModel.textData.observe(viewLifecycleOwner, Observer {
+            Timber.tag("NavigationLogger").e("AnotherFragment Activity string is $it")
+        })
+
         viewModelAnother.textData.observe(viewLifecycleOwner, Observer { stringFromStorage ->
-            Toasty.error(view.context, stringFromStorage).show()
+            Timber.tag("NavigationLogger").e("AnotherFragment storage string is $stringFromStorage")
         })
     }
 }

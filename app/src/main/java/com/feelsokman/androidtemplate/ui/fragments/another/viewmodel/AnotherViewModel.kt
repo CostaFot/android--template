@@ -5,6 +5,7 @@ import androidx.lifecycle.ViewModel
 import com.feelsokman.androidtemplate.usecase.GetStringFromStorageUseCase
 import com.feelsokman.net.domain.error.DataSourceError
 import com.feelsokman.net.domain.usecases.BaseDisposableUseCase
+import timber.log.Timber
 
 class AnotherViewModel(private val getStringFromStorageUseCase: GetStringFromStorageUseCase) : ViewModel() {
 
@@ -30,6 +31,7 @@ class AnotherViewModel(private val getStringFromStorageUseCase: GetStringFromSto
 
     override fun onCleared() {
         getStringFromStorageUseCase.stopAllBackgroundWork()
+        Timber.tag("NavigationLogger").d("AnotherViewModel onCleared")
         super.onCleared()
     }
 }

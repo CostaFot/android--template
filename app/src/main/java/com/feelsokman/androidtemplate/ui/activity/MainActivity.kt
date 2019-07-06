@@ -3,6 +3,7 @@ package com.feelsokman.androidtemplate.ui.activity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -22,7 +23,9 @@ class MainActivity : BaseActivity() {
     @Inject
     internal lateinit var factoryMainViewModel: MainViewModelFactory
 
-    private lateinit var mainViewModel: MainViewModel
+    private val mainViewModel: MainViewModel by lazy {
+        ViewModelProviders.of(this, factoryMainViewModel).get(MainViewModel::class.java)
+    }
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -38,12 +41,14 @@ class MainActivity : BaseActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.hostFragment -> Timber.d("hostFragment showing!")
-                R.id.anotherFragment -> Timber.d("anotherFragment showing!")
+                R.id.hostFragment -> Timber.tag("NavigationLogger").d("hostFragment showing!")
+                R.id.anotherFragment -> Timber.tag("NavigationLogger").d("anotherFragment showing!")
             }
         }
 
-        mainViewModel = getActivityViewModel()
+        mainViewModel.textData.observe(this, Observer {
+            Timber.tag("NavigationLogger").e("MainActivity $it")
+        })
     }
 
     override fun onSupportNavigateUp(): Boolean {
@@ -54,10 +59,6 @@ class MainActivity : BaseActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         val navController = findNavController(R.id.nav_host_fragment)
         return item.onNavDestinationSelected(navController)
-    }
-
-    fun getActivityViewModel(): MainViewModel {
-        return ViewModelProviders.of(this, factoryMainViewModel).get(MainViewModel::class.java)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

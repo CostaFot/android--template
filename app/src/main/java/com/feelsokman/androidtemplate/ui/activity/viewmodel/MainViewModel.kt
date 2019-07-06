@@ -2,11 +2,14 @@ package com.feelsokman.androidtemplate.ui.activity.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.feelsokman.androidtemplate.usecase.GetStringFromStorageUseCase
 import timber.log.Timber
+import java.util.UUID
 
-class MainViewModel : ViewModel() {
+class MainViewModel(private val getStringFromStorageUseCase: GetStringFromStorageUseCase) :
+    ViewModel() {
 
-    val booleanData = MutableLiveData<Boolean>().apply { postValue(false) }
+    val textData = MutableLiveData<String>().apply { postValue(UUID.randomUUID().toString()) }
 
     override fun onCleared() {
         Timber.d("MainViewModel cleared")
