@@ -8,17 +8,18 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import com.feelsokman.androidtemplate.R
 import com.feelsokman.androidtemplate.ui.activity.viewmodel.MainViewModel
 import com.feelsokman.androidtemplate.ui.base.BaseFragment
 import com.feelsokman.androidtemplate.ui.fragments.host.viewmodel.HostViewModel
 import com.feelsokman.androidtemplate.ui.fragments.host.viewmodel.HostViewModelFactory
-import kotlinx.android.synthetic.main.fragment_host.*
 import timber.log.Timber
 import javax.inject.Inject
 
-class HostFragment : BaseFragment() {
+class HostFragment : BaseFragment(), ViewBinder.Callback {
+    override fun onButtonClicked() {
+        //
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return inflater.inflate(R.layout.fragment_host, container, false)
@@ -31,12 +32,18 @@ class HostFragment : BaseFragment() {
     // Get a reference to the ViewModel scoped to its Activity
     private val activityViewModel by activityViewModels<MainViewModel>()
 
+    private lateinit var viewBinder: ViewBinder
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewBinder = ViewBinder(view, this)
+
+        viewBinder.restoreState(savedInstanceState)
 
         activityViewModel.textData.observe(viewLifecycleOwner, Observer {
             Timber.tag("NavigationLogger").e("HostFragment Activity string is $it")
@@ -46,9 +53,14 @@ class HostFragment : BaseFragment() {
             Timber.tag("NavigationLogger").e("HostFragment viewmodel string is $it")
         })
 
-        button.setOnClickListener {
+        /*button.setOnClickListener {
             findNavController().navigate(R.id.action_hostFragment_to_anotherFragment)
-        }
+        }*/
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        viewBinder.saveState(outState)
     }
 
     override fun onPause() {
