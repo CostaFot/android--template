@@ -4,8 +4,6 @@ import android.content.Context
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.runner.AndroidJUnit4
-import com.feelsokman.net.domain.error.DataSourceError
-import com.feelsokman.net.domain.usecases.BaseDisposableUseCase
 import com.feelsokman.storage.LocalStorage
 import com.feelsokman.storage.Storage
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -14,7 +12,6 @@ import org.junit.Rule
 import org.junit.Test
 import org.junit.rules.TestRule
 import org.junit.runner.RunWith
-import kotlin.test.assertTrue
 
 @RunWith(AndroidJUnit4::class)
 class GetStringFromStorageUseCaseTest {
@@ -37,22 +34,5 @@ class GetStringFromStorageUseCaseTest {
 
     @Test
     fun getStringFromStorage() {
-        var balls: String? = null
-
-        getStringFromStorageUseCase.getStringFromStorage(object : BaseDisposableUseCase.Callback<String> {
-            override fun onLoadingStarted() {
-                //
-            }
-
-            override fun onSuccess(result: String) {
-                balls = result
-            }
-
-            override fun onError(error: DataSourceError) {
-                //
-            }
-        })
-
-        assertTrue { balls.equals("this is a string saved in local storage") }
     }
 }

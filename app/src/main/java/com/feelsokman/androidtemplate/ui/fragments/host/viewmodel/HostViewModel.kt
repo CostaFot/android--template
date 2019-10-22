@@ -2,16 +2,21 @@ package com.feelsokman.androidtemplate.ui.fragments.host.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.feelsokman.net.domain.JsonPlaceHolderClient
+import com.feelsokman.net.domain.model.DomainTodo
+import kotlinx.coroutines.launch
 import timber.log.Timber
-import java.util.UUID
 
-class HostViewModel : ViewModel() {
+class HostViewModel(private val jsonPlaceHolderClient: JsonPlaceHolderClient) : ViewModel() {
 
-    val textData: MutableLiveData<String> =
-        MutableLiveData<String>().apply { postValue(UUID.randomUUID().toString()) }
+    val textData = MutableLiveData<String>()
 
-    fun changeText() {
-        textData.postValue(UUID.randomUUID().toString())
+    fun getTodos() {
+        viewModelScope.launch {
+            val domainTodo: DomainTodo? = jsonPlaceHolderClient.getTodos()
+            textData.postValue(domainTodo?.title)
+        }
     }
 
     override fun onCleared() {

@@ -36,7 +36,7 @@ android {
         vectorDrawables.useSupportLibrary = true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "serverUrl", '"https://api.betterttv.net/"'
+        buildConfigField "String", "serverUrl", '"https://jsonplaceholder.typicode.com/"'
     }
     signingConfigs {
         release {

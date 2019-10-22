@@ -28,7 +28,6 @@
                 android:elevation="4dp"
                 android:theme="@style/ToolbarTheme">
 
-
                 <ImageView
                     android:id="@+id/toolbar_logo"
                     android:layout_width="48dp"
@@ -37,7 +36,6 @@
                     android:src="@drawable/ic_info"
                     android:tint="@color/white"
                     tools:ignore="ContentDescription" />
-
 
             </androidx.appcompat.widget.Toolbar>
 
@@ -49,15 +47,12 @@
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            app:defaultNavHost="true"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appbar"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/nav_graph">
-
-
-        </fragment>
+            app:navGraph="@navigation/nav_graph" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

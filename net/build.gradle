@@ -65,6 +65,10 @@ dependencies {
     // Network watcher
     api rootProject.ext.dependencies.reactiveNetwork
 
+    // Coroutines
+    implementation rootProject.ext.dependencies.coroutinesCore
+    implementation rootProject.ext.dependencies.coroutinesAndroid
+
     // Logging
     implementation rootProject.ext.dependencies.timberLogger
 

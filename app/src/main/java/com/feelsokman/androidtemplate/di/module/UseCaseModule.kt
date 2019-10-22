@@ -8,7 +8,6 @@ import io.reactivex.Scheduler
 
 @Module
 class UseCaseModule {
-
     @Provides
     internal fun providesGetStringFromStorageUseCase(
         scheduler: Scheduler,
