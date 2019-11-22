@@ -19,10 +19,10 @@ class GetStringFromStorageUseCaseTest {
     @get:Rule
     var rule: TestRule = InstantTaskExecutorRule()
 
-    private lateinit var getStringFromStorageUseCase: GetStringFromStorageUseCase
-    private lateinit var appPreferences: AppPreferences
+    lateinit var getStringFromStorageUseCase: GetStringFromStorageUseCase
+    lateinit var appPreferences: AppPreferences
 
-    private lateinit var appContext: Context
+    lateinit var appContext: Context
 
     @Before
     fun setUp() {

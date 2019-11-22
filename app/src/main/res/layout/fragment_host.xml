@@ -15,7 +15,7 @@
         android:text="THIS IS THE HOST FRAGMENT"
         android:textAppearance="?attr/textAppearanceHeadline5" />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:id="@+id/button"
         android:layout_width="wrap_content"

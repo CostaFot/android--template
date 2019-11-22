@@ -237,7 +237,6 @@ dependencies {
     androidTestImplementation rootProject.ext.testDependencies.testCoreX
     androidTestImplementation rootProject.ext.testDependencies.runner
     androidTestImplementation rootProject.ext.testDependencies.espresso
-    androidTestImplementation rootProject.ext.testDependencies.kakaoUiTesting
 
 
     debugImplementation rootProject.ext.testDependencies.fragmentScenario
