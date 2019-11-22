@@ -18,8 +18,7 @@ class TemplateApplication : DaggerApplication() {
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
             Timber.d("Timber initialised")
-        }
-        else {
+        } else {
             Timber.e("You should not be seeing this!")
         }
         Timber.e("onCreate")
