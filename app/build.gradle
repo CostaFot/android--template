@@ -4,7 +4,6 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 /*apply plugin: 'io.fabric'
 apply plugin: 'com.google.firebase.firebase-perf'*/
-apply plugin: "androidx.navigation.safeargs.kotlin"
 
 apply from: '../buildsystem/quality/quality.gradle'
 apply from: '../buildsystem/quality/ktlint.gradle'
@@ -122,7 +121,6 @@ android {
 dependencies {
     implementation project(':analytics')
     implementation project(':net')
-    implementation project(':database')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
@@ -158,12 +156,35 @@ dependencies {
     implementation rootProject.ext.dependencies.rxPermissions
     implementation rootProject.ext.dependencies.rxBindingMaterial
 
+    implementation rootProject.ext.dependencies.gson
+    implementation rootProject.ext.dependencies.okHttp3
+    implementation rootProject.ext.dependencies.loggingInterceptor
+    implementation(rootProject.ext.dependencies.retrofit2) {
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+    }
+    implementation(rootProject.ext.dependencies.retrofit2GsonConverter) {
+        exclude group: 'com.google.code.gson', module: 'gson'
+    }
+    implementation(rootProject.ext.dependencies.retrofit2RxJava2) {
+        exclude group: 'io.reactivex.rxjava2', module: 'rxjava'
+    }
+
+    // Network watcher
+    implementation rootProject.ext.dependencies.reactiveNetwork
+
+    // Arrow
+    implementation rootProject.ext.dependencies.arrowCore
+    implementation rootProject.ext.dependencies.arrowSyntax
+
     // Dependency Injection
     implementation rootProject.ext.dependencies.dagger
     kapt rootProject.ext.dependencies.daggerCompiler
     implementation rootProject.ext.dependencies.daggerAndroid
     implementation rootProject.ext.dependencies.daggerAndroidSupport
     kapt rootProject.ext.dependencies.daggerProcessor
+
+    // Shared pref
+    implementation rootProject.ext.dependencies.kotlinpref
 
     // Logging
     implementation rootProject.ext.dependencies.timberLogger
@@ -190,8 +211,10 @@ dependencies {
     // Leak detection
     debugImplementation rootProject.ext.dependencies.leakCanary
 
+    // Firebase core
+    implementation rootProject.ext.dependencies.firebaseCore
     // Firebase performance
-    implementation rootProject.ext.dependencies.firebasePerformance
+    //implementation rootProject.ext.dependencies.firebasePerformance
     // Crashlytics
     implementation rootProject.ext.dependencies.crashlytics
 

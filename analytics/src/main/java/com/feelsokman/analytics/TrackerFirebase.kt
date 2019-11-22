@@ -3,7 +3,7 @@ package com.feelsokman.analytics
 import android.os.Bundle
 import com.google.firebase.analytics.FirebaseAnalytics
 
-class TrackerFirebase(private val firebaseAnalytics: FirebaseAnalytics) : Analytics {
+class TrackerFirebase(private val firebaseAnalytics: FirebaseAnalytics) : Tracker {
     override fun trackSaveSound(sound: String) {
         val params = Bundle()
         params.putString(FirebaseAnalytics.Param.ITEM_NAME, sound)

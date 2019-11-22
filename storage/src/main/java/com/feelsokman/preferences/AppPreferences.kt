@@ -1,6 +1,6 @@
-package com.feelsokman.storage
+package com.feelsokman.preferences
 
-interface Storage {
+interface AppPreferences {
 
     fun saveSampleString(text: String)
 

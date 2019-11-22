@@ -4,8 +4,8 @@ import android.content.Context
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.runner.AndroidJUnit4
-import com.feelsokman.storage.LocalStorage
-import com.feelsokman.storage.Storage
+import com.feelsokman.preferences.AppPreferences
+import com.feelsokman.preferences.LocalAppPreferences
 import io.reactivex.android.schedulers.AndroidSchedulers
 import org.junit.Before
 import org.junit.Rule
@@ -20,7 +20,7 @@ class GetStringFromStorageUseCaseTest {
     var rule: TestRule = InstantTaskExecutorRule()
 
     private lateinit var getStringFromStorageUseCase: GetStringFromStorageUseCase
-    private lateinit var storage: Storage
+    private lateinit var appPreferences: AppPreferences
 
     lateinit var appContext: Context
 
@@ -28,8 +28,8 @@ class GetStringFromStorageUseCaseTest {
     fun setUp() {
         appContext = ApplicationProvider.getApplicationContext()
 
-        storage = LocalStorage(appContext)
-        getStringFromStorageUseCase = GetStringFromStorageUseCase(AndroidSchedulers.mainThread(), storage)
+        appPreferences = LocalAppPreferences(appContext)
+        getStringFromStorageUseCase = GetStringFromStorageUseCase(AndroidSchedulers.mainThread(), appPreferences)
     }
 
     @Test

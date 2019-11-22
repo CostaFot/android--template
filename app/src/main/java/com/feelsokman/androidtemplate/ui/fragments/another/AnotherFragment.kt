@@ -8,13 +8,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.navArgs
 import com.feelsokman.androidtemplate.R
 import com.feelsokman.androidtemplate.ui.activity.viewmodel.MainViewModel
 import com.feelsokman.androidtemplate.ui.base.BaseFragment
 import com.feelsokman.androidtemplate.ui.fragments.another.viewmodel.AnotherViewModel
 import com.feelsokman.androidtemplate.ui.fragments.another.viewmodel.AnotherViewModelFactory
-import com.feelsokman.storage.Storage
+import com.feelsokman.preferences.AppPreferences
 import timber.log.Timber
 import javax.inject.Inject
 
@@ -24,9 +23,8 @@ class AnotherFragment : BaseFragment() {
         return inflater.inflate(R.layout.fragment_another, container, false)
     }
 
-    private val args: AnotherFragmentArgs by navArgs()
     @Inject
-    internal lateinit var storage: Storage
+    internal lateinit var appPreferences: AppPreferences
     @Inject
     internal lateinit var factory: AnotherViewModelFactory
 
@@ -37,9 +35,6 @@ class AnotherFragment : BaseFragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        // Retrieving arguments if any
-        val stringArgument = args.extraAnotherFragment
-        Timber.tag("NavigationLogger").d("Retrieving argument $stringArgument")
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

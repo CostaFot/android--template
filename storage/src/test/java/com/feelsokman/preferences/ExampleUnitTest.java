@@ -1,4 +1,4 @@
-package com.feelsokman.storage;
+package com.feelsokman.preferences;
 
 import org.junit.Test;
 

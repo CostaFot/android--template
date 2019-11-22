@@ -47,7 +47,7 @@ dependencies {
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // Shared pref
-    api rootProject.ext.dependencies.kotlinpref
+    implementation rootProject.ext.dependencies.kotlinpref
     // Logging
     implementation rootProject.ext.dependencies.timberLogger
 

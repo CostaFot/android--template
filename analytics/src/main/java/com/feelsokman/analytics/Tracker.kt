@@ -1,6 +1,6 @@
 package com.feelsokman.analytics
 
-interface Analytics {
+interface Tracker {
 
     fun trackShare(sound: String)
     fun trackUpvote()

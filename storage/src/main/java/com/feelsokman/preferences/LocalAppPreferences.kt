@@ -1,9 +1,9 @@
-package com.feelsokman.storage
+package com.feelsokman.preferences
 
 import android.content.Context
 import com.chibatching.kotpref.KotprefModel
 
-class LocalStorage(context: Context) : KotprefModel(context), Storage {
+class LocalAppPreferences(context: Context) : KotprefModel(context), AppPreferences {
 
     private var someText by stringPref(
         key = "some_text",
