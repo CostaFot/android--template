@@ -47,8 +47,8 @@
     public static ** valueOf(java.lang.String);
 }
 
--keep class com.feelsokman.net.model** { *; }
--keep class com.feelsokman.analytics** { *; }
+-keep class com.feelsokman.androidtemplate.net.model** { *; }
+-keep class com.feelsokman.androidtemplate.analytics** { *; }
 -keep class com.feelsokman.voice.model** { *; }
 -keep class com.feelsokman.storage** { *; }
 -keep class com.nightonke.boommenu.** { *; }

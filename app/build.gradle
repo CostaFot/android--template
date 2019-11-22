@@ -119,8 +119,6 @@ android {
 }
 
 dependencies {
-    implementation project(':analytics')
-    implementation project(':net')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 

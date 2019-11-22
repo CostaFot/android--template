@@ -4,8 +4,8 @@ import android.app.Application
 import android.content.Context
 import android.content.res.Resources
 import com.feelsokman.androidtemplate.BuildConfig
-import com.feelsokman.preferences.AppPreferences
-import com.feelsokman.preferences.LocalAppPreferences
+import com.feelsokman.androidtemplate.preferences.AppPreferences
+import com.feelsokman.androidtemplate.preferences.LocalAppPreferences
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder

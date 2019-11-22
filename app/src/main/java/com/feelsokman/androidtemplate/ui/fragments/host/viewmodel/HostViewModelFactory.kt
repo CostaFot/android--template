@@ -2,7 +2,7 @@ package com.feelsokman.androidtemplate.ui.fragments.host.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.feelsokman.net.domain.JsonPlaceHolderClient
+import com.feelsokman.androidtemplate.net.domain.JsonPlaceHolderClient
 
 class HostViewModelFactory(private val jsonPlaceHolderClient: JsonPlaceHolderClient) : ViewModelProvider.Factory {
 

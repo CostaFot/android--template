@@ -2,9 +2,9 @@ package com.feelsokman.androidtemplate.di.module
 
 import android.content.Context
 import android.net.ConnectivityManager
-import com.feelsokman.net.domain.JsonPlaceHolderClient
-import com.feelsokman.net.net.JsonPlaceHolderService
-import com.feelsokman.net.net.resolver.NetworkResolver
+import com.feelsokman.androidtemplate.net.domain.JsonPlaceHolderClient
+import com.feelsokman.androidtemplate.net.net.JsonPlaceHolderService
+import com.feelsokman.androidtemplate.net.net.resolver.NetworkResolver
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
@@ -75,11 +75,17 @@ class NetworkModule {
     @Provides
     internal fun providesJsonPlaceHolderService(
         retrofit: Retrofit
-    ): JsonPlaceHolderService = retrofit.create(JsonPlaceHolderService::class.java)
+    ): JsonPlaceHolderService = retrofit.create(
+        JsonPlaceHolderService::class.java
+    )
 
     @Provides
     internal fun providesJsonPlaceHolderSClient(
         jsonPlaceHolderService: JsonPlaceHolderService,
         dispatcher: CoroutineDispatcher
-    ): JsonPlaceHolderClient = JsonPlaceHolderClient(jsonPlaceHolderService, dispatcher)
+    ): JsonPlaceHolderClient =
+        JsonPlaceHolderClient(
+            jsonPlaceHolderService,
+            dispatcher
+        )
 }

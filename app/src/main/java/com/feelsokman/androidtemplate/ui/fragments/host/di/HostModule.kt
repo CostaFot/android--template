@@ -1,7 +1,7 @@
 package com.feelsokman.androidtemplate.ui.fragments.host.di
 
+import com.feelsokman.androidtemplate.net.domain.JsonPlaceHolderClient
 import com.feelsokman.androidtemplate.ui.fragments.host.viewmodel.HostViewModelFactory
-import com.feelsokman.net.domain.JsonPlaceHolderClient
 import dagger.Module
 import dagger.Provides
 

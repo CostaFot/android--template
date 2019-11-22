@@ -1,7 +1,7 @@
 package com.feelsokman.androidtemplate.di.module
 
+import com.feelsokman.androidtemplate.preferences.AppPreferences
 import com.feelsokman.androidtemplate.usecase.GetStringFromStorageUseCase
-import com.feelsokman.preferences.AppPreferences
 import dagger.Module
 import dagger.Provides
 import io.reactivex.Scheduler
