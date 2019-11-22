@@ -22,7 +22,7 @@ class GetStringFromStorageUseCaseTest {
     private lateinit var getStringFromStorageUseCase: GetStringFromStorageUseCase
     private lateinit var appPreferences: AppPreferences
 
-    lateinit var appContext: Context
+    private lateinit var appContext: Context
 
     @Before
     fun setUp() {
