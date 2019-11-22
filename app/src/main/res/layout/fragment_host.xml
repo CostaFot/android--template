@@ -2,7 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/accent"
     android:orientation="vertical"
     android:weightSum="2">
 
@@ -14,18 +13,15 @@
         android:layout_weight="1"
         android:gravity="center"
         android:text="THIS IS THE HOST FRAGMENT"
-        android:textColor="@color/white"
-        android:textSize="30sp"
-        android:textStyle="bold" />
+        android:textAppearance="?attr/textAppearanceHeadline5" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="@color/primary"
-        android:padding="4dp"
-        android:text="GO TO ANOTHER FRAGMENT"
-        android:textColor="@color/white"
-        android:textSize="20sp" />
+        android:textAppearance="?attr/textAppearanceBody1"
+        android:text="GO TO ANOTHER FRAGMENT" />
+
 </LinearLayout>

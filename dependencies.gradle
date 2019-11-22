@@ -21,7 +21,7 @@ allprojects {
                 constraintLayoutX     : 'androidx.constraintlayout:constraintlayout:2.0.0-alpha3',
                 recyclerviewX         : 'androidx.recyclerview:recyclerview:1.0.0',
                 annotation            : 'androidx.annotation:annotation:1.1.0',
-                design                : 'com.google.android.material:material:1.1.0-alpha07',
+                material              : 'com.google.android.material:material:1.2.0-alpha02',
                 cardViewX             : 'androidx.cardview:cardview:1.0.0',
 
                 // KTX

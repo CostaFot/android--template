@@ -5,8 +5,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.feelsokman.androidtemplate.usecase.GetStringFromStorageUseCase
 
 class MainViewModelFactory(
-    private val getStringFromStorageUseCase: GetStringFromStorageUseCase,
-    private val balls: String
+    private val getStringFromStorageUseCase: GetStringFromStorageUseCase
 ) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {

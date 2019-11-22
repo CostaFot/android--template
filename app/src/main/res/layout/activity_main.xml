@@ -16,17 +16,16 @@
             android:id="@+id/appbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:elevation="4dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+            app:layout_constraintTop_toTopOf="parent">
 
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:elevation="4dp"
-                android:theme="@style/ToolbarTheme">
+                android:theme="@style/Widget.App.DefaultToolbar">
 
                 <ImageView
                     android:id="@+id/toolbar_logo"
@@ -34,7 +33,7 @@
                     android:layout_height="48dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_info"
-                    android:tint="@color/white"
+                    android:tint="?attr/colorControlHighlight"
                     tools:ignore="ContentDescription" />
 
             </androidx.appcompat.widget.Toolbar>
