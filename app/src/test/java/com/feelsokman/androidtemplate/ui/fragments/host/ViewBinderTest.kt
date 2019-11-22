@@ -16,9 +16,9 @@ import org.mockito.MockitoAnnotations
 @RunWith(AndroidJUnit4::class)
 class ViewBinderTest {
 
-    lateinit var viewBinder: ViewBinder
+    private lateinit var viewBinder: ViewBinder
 
-    lateinit var appContext: Context
+    private lateinit var appContext: Context
 
     @Mock
     lateinit var callback: ViewBinder.Callback

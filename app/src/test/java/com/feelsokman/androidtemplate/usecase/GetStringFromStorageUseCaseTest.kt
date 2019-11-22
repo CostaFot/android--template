@@ -4,8 +4,8 @@ import android.content.Context
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.runner.AndroidJUnit4
-import com.feelsokman.preferences.AppPreferences
-import com.feelsokman.preferences.LocalAppPreferences
+import com.feelsokman.androidtemplate.preferences.AppPreferences
+import com.feelsokman.androidtemplate.preferences.LocalAppPreferences
 import io.reactivex.android.schedulers.AndroidSchedulers
 import org.junit.Before
 import org.junit.Rule
