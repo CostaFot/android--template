@@ -3,8 +3,7 @@ package com.feelsokman.androidtemplate.preferences
 import android.content.Context
 import com.chibatching.kotpref.KotprefModel
 
-class LocalAppPreferences(context: Context) : KotprefModel(context),
-    AppPreferences {
+class LocalAppPreferences(context: Context) : KotprefModel(context), AppPreferences {
 
     private var someText by stringPref(
         key = "some_text",
