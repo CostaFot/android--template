@@ -1,9 +1,9 @@
-package com.feelsokman.androidtemplate.net.net.resolver
+package com.feelsokman.androidtemplate.net.connectivity
 
 /**
  * Interface for hiding network connectivity resolution
  */
-interface NetworkResolver {
+interface ConnectivityChecker {
 
     fun isConnected(): Boolean
 }

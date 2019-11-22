@@ -27,13 +27,7 @@ class AppModule {
 
     @Provides
     @Singleton
-    internal fun providesCache(context: Context): Cache {
-        return Cache(context.cacheDir, 10 * 1024 * 1024)
-    }
-
-    @Provides
-    @Singleton
-    fun providesContext(application: Application): Context {
+    fun providesApplicationContext(application: Application): Context {
         return application
     }
 
@@ -45,11 +39,17 @@ class AppModule {
 
     @Provides
     @Singleton
+    internal fun providesCache(applicationContext: Context): Cache {
+        return Cache(applicationContext.cacheDir, 10 * 1024 * 1024)
+    }
+
+    @Provides
+    @Singleton
     fun providesBus(): Bus = Bus()
 
     @Provides
-    fun providesFirebaseAnalytics(context: Context): FirebaseAnalytics {
-        return FirebaseAnalytics.getInstance(context)
+    fun providesFirebaseAnalytics(applicationContext: Context): FirebaseAnalytics {
+        return FirebaseAnalytics.getInstance(applicationContext)
     }
 
     @Provides
