@@ -170,10 +170,6 @@ dependencies {
     // Network watcher
     implementation rootProject.ext.dependencies.reactiveNetwork
 
-    // Arrow
-    implementation rootProject.ext.dependencies.arrowCore
-    implementation rootProject.ext.dependencies.arrowSyntax
-
     // Dependency Injection
     implementation rootProject.ext.dependencies.dagger
     kapt rootProject.ext.dependencies.daggerCompiler

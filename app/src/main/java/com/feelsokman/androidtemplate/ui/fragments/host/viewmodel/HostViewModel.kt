@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.feelsokman.androidtemplate.net.domain.JsonPlaceHolderClient
-import com.feelsokman.androidtemplate.net.domain.model.DomainTodo
+import com.feelsokman.androidtemplate.result.fold
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
@@ -14,8 +14,14 @@ class HostViewModel(private val jsonPlaceHolderClient: JsonPlaceHolderClient) : 
 
     fun getTodos() {
         viewModelScope.launch {
-            val domainTodo: DomainTodo? = jsonPlaceHolderClient.getTodos()
-            textData.postValue(domainTodo?.title)
+            jsonPlaceHolderClient.getTodo().fold(
+                ifSuccess = {
+                    textData.postValue(it.title)
+                },
+                ifError = {
+                    textData.postValue(it.toString())
+                }
+            )
         }
     }
 
