@@ -4,6 +4,8 @@ import android.app.Application
 import android.content.Context
 import android.content.res.Resources
 import com.feelsokman.androidtemplate.BuildConfig
+import com.feelsokman.androidtemplate.coroutine.DefaultDispatcherProvider
+import com.feelsokman.androidtemplate.coroutine.DispatcherProvider
 import com.feelsokman.androidtemplate.preferences.AppPreferences
 import com.feelsokman.androidtemplate.preferences.LocalAppPreferences
 import com.google.firebase.analytics.FirebaseAnalytics
@@ -13,7 +15,6 @@ import com.squareup.otto.Bus
 import dagger.Module
 import dagger.Provides
 import io.reactivex.schedulers.Schedulers
-import kotlinx.coroutines.Dispatchers
 import okhttp3.Cache
 import javax.inject.Named
 import javax.inject.Singleton
@@ -71,8 +72,11 @@ class AppModule {
     @Provides
     internal fun providesExecutionScheduler() = Schedulers.io()
 
+    @Singleton
     @Provides
-    internal fun providesDefaultDispatcher() = Dispatchers.IO
+    internal fun providesDispatcherProvider(): DispatcherProvider {
+        return DefaultDispatcherProvider()
+    }
 
     @Provides
     @Singleton

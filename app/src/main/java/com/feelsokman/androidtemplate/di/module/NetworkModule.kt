@@ -2,13 +2,13 @@ package com.feelsokman.androidtemplate.di.module
 
 import android.content.Context
 import android.net.ConnectivityManager
+import com.feelsokman.androidtemplate.coroutine.DispatcherProvider
 import com.feelsokman.androidtemplate.net.connectivity.ConnectivityChecker
 import com.feelsokman.androidtemplate.net.domain.JsonPlaceHolderClient
 import com.feelsokman.androidtemplate.net.net.JsonPlaceHolderService
 import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
-import kotlinx.coroutines.CoroutineDispatcher
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -80,6 +80,6 @@ class NetworkModule {
     @Provides
     internal fun providesJsonPlaceHolderSClient(
         jsonPlaceHolderService: JsonPlaceHolderService,
-        dispatcher: CoroutineDispatcher
-    ): JsonPlaceHolderClient = JsonPlaceHolderClient(jsonPlaceHolderService, dispatcher)
+        dispatcherProvider: DispatcherProvider
+    ): JsonPlaceHolderClient = JsonPlaceHolderClient(jsonPlaceHolderService, dispatcherProvider)
 }

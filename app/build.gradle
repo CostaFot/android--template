@@ -90,6 +90,9 @@ android {
         }
     }
 
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -206,9 +209,7 @@ dependencies {
     debugImplementation rootProject.ext.dependencies.leakCanary
 
     // Firebase core
-    implementation rootProject.ext.dependencies.firebaseCore
-    // Firebase performance
-    //implementation rootProject.ext.dependencies.firebasePerformance
+    implementation rootProject.ext.dependencies.firebaseAnalytics
     // Crashlytics
     implementation rootProject.ext.dependencies.crashlytics
 
@@ -227,6 +228,7 @@ dependencies {
     testImplementation rootProject.ext.testDependencies.rules
     testImplementation rootProject.ext.testDependencies.truth
     testImplementation rootProject.ext.testDependencies.kluent
+    testImplementation rootProject.ext.testDependencies.coroutineTest
 
     androidTestImplementation rootProject.ext.testDependencies.jUnit
     androidTestImplementation rootProject.ext.testDependencies.jUnitKotlin

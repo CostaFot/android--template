@@ -25,8 +25,9 @@ allprojects {
                 cardViewX             : 'androidx.cardview:cardview:1.0.0',
 
                 // KTX
-                coreKtx               : 'androidx.core:core-ktx:1.2.0-alpha02',
-                fragmentKtx           : 'androidx.fragment:fragment-ktx:1.2.0-alpha01',
+                coreKtx               : 'androidx.core:core-ktx:1.1.0',
+                fragmentKtx           : 'androidx.fragment:fragment-ktx:1.1.0',
+                preferenceKtx         : 'androidx.preference:preference-ktx:1.1.0',
                 paletteKtx            : 'androidx.palette:palette-ktx:1.0.0',
                 sqliteKtx             : 'androidx.sqlite:sqlite-ktx:1.0.0',
                 collectionsKtx        : 'androidx.collection:collection-ktx:1.1.0',
@@ -34,8 +35,8 @@ allprojects {
                 workManagerKtx        : 'android.arch.work:work-runtime-ktx:1.0.0',
 
                 // CoRoutines
-                coroutinesCore        : 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.0-M2',
-                coroutinesAndroid     : 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.0-M2',
+                coroutinesCore        : 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.3',
+                coroutinesAndroid     : 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.3',
 
                 // Arrow
                 arrowCore             : 'io.arrow-kt:arrow-core:0.10.2',
@@ -46,22 +47,22 @@ allprojects {
                 viewmodelKtx          : 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0-alpha02',
 
                 // *** Arch-component Navigation
-                navigationFragments   : 'androidx.navigation:navigation-fragment-ktx:2.1.0-alpha06',
-                navigationUI          : 'androidx.navigation:navigation-ui-ktx:2.1.0-alpha06',
+                navigationFragments   : 'androidx.navigation:navigation-fragment-ktx:2.2.0-beta01',
+                navigationUI          : 'androidx.navigation:navigation-ui-ktx:2.2.0-beta01',
                 // *** Dependency Injection
-                dagger                : 'com.google.dagger:dagger:2.23.2',
-                daggerCompiler        : 'com.google.dagger:dagger-compiler:2.23.2',
-                daggerAndroid         : 'com.google.dagger:dagger-android:2.23.2',
-                daggerAndroidSupport  : 'com.google.dagger:dagger-android-support:2.23.2',
-                daggerProcessor       : 'com.google.dagger:dagger-android-processor:2.23.2',
+                dagger                : 'com.google.dagger:dagger:2.25.4',
+                daggerCompiler        : 'com.google.dagger:dagger-compiler:2.25.4',
+                daggerAndroid         : 'com.google.dagger:dagger-android:2.25.4',
+                daggerAndroidSupport  : 'com.google.dagger:dagger-android-support:2.25.4',
+                daggerProcessor       : 'com.google.dagger:dagger-android-processor:2.25.4',
                 // *** Arch-component RoomDB
                 roomDB                : 'android.arch.persistence.room:runtime:2.1.0',
                 roomKotlinExtensions  : 'androidx.room:room-ktx:2.1.0',
                 roomRxSupport         : 'androidx.room:room-rxjava2:2.1.0',
                 roomCompiler          : 'android.arch.persistence.room:compiler:2.1.0',
                 // *** Firebase
-                firebaseCore          : 'com.google.firebase:firebase-analytics:17.2.1',
-                firebasePerformance   : 'com.google.firebase:firebase-perf:19.0.1',
+                firebaseAnalytics     : 'com.google.firebase:firebase-analytics:17.2.1',
+                firebasePerformance   : 'com.google.firebase:firebase-perf:19.0.4',
                 // *** Crash reporting
                 crashlytics           : 'com.crashlytics.sdk.android:crashlytics:2.10.1',
                 // *** Retrofit
@@ -81,6 +82,10 @@ allprojects {
                 // *** Imaging
                 glide                 : 'com.github.bumptech.glide:glide:4.9.0',
                 glideCompiler         : 'com.github.bumptech.glide:compiler:4.9.0',
+                fresco                : 'com.facebook.fresco:fresco:2.0.0',
+                frescoWebP            : 'com.facebook.fresco:webpsupport:2.0.0',
+                frescoAnimatedWebP    : 'com.facebook.fresco:animated-webp:2.0.0',
+                frescoAnimatedBase    : 'com.facebook.fresco:animated-base:2.0.0',
                 // *** Event broadcasting
                 otto                  : 'com.squareup:otto:1.3.8',
                 // *** Network Watcher
@@ -93,6 +98,8 @@ allprojects {
                 // *** Toasty (leave this at 1.3.0 as the newer versions took away functionality)
                 toast                 : 'com.github.GrenderG:Toasty:1.3.0',
                 // *** Layout stuff
+                groupie               : 'com.xwray:groupie:2.7.0',
+                groupieKtx            : 'com.xwray:groupie-kotlin-android-extensions:2.7.0',
                 materialPreLolipop    : 'com.github.rey5137:material:1.2.5',
                 lottie                : 'com.airbnb.android:lottie:3.0.7',
                 zxing                 : 'com.google.zxing:core:3.2.1',
@@ -147,8 +154,9 @@ allprojects {
                 rules                 : 'androidx.test:rules:1.3.0-alpha01',
                 truth                 : 'androidx.test.ext:truth:1.3.0-alpha01',
                 kluent                : 'org.amshove.kluent:kluent:1.51',
+                coroutineTest         : 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.2',
                 // use debugImplementation for fragment scenario!
-                fragmentScenario      : 'androidx.fragment:fragment-testing:1.2.0-alpha01',
+                fragmentScenario      : 'androidx.fragment:fragment-testing:1.1.0',
                 kakaoUiTesting        : 'com.agoda.kakao:kakao:2.0.0'
 
 
