@@ -8,8 +8,7 @@ fun <T> LiveData<T>.observeForTesting(block: () -> Unit) {
     try {
         observeForever(observer)
         block()
-    }
-    finally {
+    } finally {
         removeObserver(observer)
     }
 }

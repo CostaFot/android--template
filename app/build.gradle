@@ -2,8 +2,11 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-/*apply plugin: 'io.fabric'
-apply plugin: 'com.google.firebase.firebase-perf'*/
+/*
+Uncomment me for prod
+apply plugin: 'io.fabric'
+apply plugin: 'com.google.firebase.firebase-perf'
+apply plugin: 'com.google.gms.google-services'*/
 
 apply from: '../buildsystem/quality/quality.gradle'
 apply from: '../buildsystem/quality/ktlint.gradle'
@@ -240,4 +243,3 @@ dependencies {
     debugImplementation rootProject.ext.testDependencies.fragmentScenario
 
 }
-//apply plugin: 'com.google.gms.google-services'

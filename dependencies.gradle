@@ -61,8 +61,8 @@ allprojects {
                 roomRxSupport         : 'androidx.room:room-rxjava2:2.1.0',
                 roomCompiler          : 'android.arch.persistence.room:compiler:2.1.0',
                 // *** Firebase
-                firebaseAnalytics     : 'com.google.firebase:firebase-analytics:17.2.1',
-                firebasePerformance   : 'com.google.firebase:firebase-perf:19.0.4',
+                firebaseAnalytics     : 'com.google.firebase:firebase-analytics:17.2.2',
+                firebasePerformance   : 'com.google.firebase:firebase-perf:19.0.5',
                 // *** Crash reporting
                 crashlytics           : 'com.crashlytics.sdk.android:crashlytics:2.10.1',
                 // *** Retrofit
@@ -112,6 +112,7 @@ allprojects {
                 materialEditText      : 'com.github.florent37:materialtextfield:1.0.7',
                 shimmer               : 'com.facebook.shimmer:shimmer:0.4.0@aar',
                 switches              : 'com.github.angads25:toggle:1.1.0',
+                audioviz              : 'com.cleveroad:audiovisualization:1.0.1',
                 // *** Animations
                 animations1           : 'androidx.core:core:1.2.0-alpha02',
                 animations2           : 'com.daimajia.easing:library:2.1@aar',
