@@ -1,5 +1,6 @@
 package com.feelsokman.androidtemplate.ui.fragments.host
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.feelsokman.androidtemplate.R
+import com.feelsokman.androidtemplate.dagger2.SpotActivity
 import com.feelsokman.androidtemplate.ui.activity.viewmodel.MainViewModel
 import com.feelsokman.androidtemplate.ui.base.BaseFragment
 import com.feelsokman.androidtemplate.ui.fragments.host.viewmodel.HostViewModel
@@ -48,15 +50,9 @@ class HostFragment : BaseFragment(), ViewBinder.Callback {
         })
 
         button.setOnClickListener {
-            viewModelHost.getTodos()
+            val intent = Intent(activity, SpotActivity::class.java)
+            intent.putExtra(SpotActivity.EXTRA_INT, 5)
+            startActivity(intent)
         }
-    }
-
-    override fun onSaveInstanceState(outState: Bundle) {
-        super.onSaveInstanceState(outState)
-    }
-
-    override fun onPause() {
-        super.onPause()
     }
 }
