@@ -4,9 +4,11 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 /*
 Uncomment me for prod
-apply plugin: 'io.fabric'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
 apply plugin: 'com.google.firebase.firebase-perf'
-apply plugin: 'com.google.gms.google-services'*/
+*/
+
 
 apply from: '../buildsystem/quality/quality.gradle'
 apply from: '../buildsystem/quality/ktlint.gradle'

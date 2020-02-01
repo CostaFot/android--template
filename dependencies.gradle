@@ -64,7 +64,7 @@ allprojects {
                 firebaseAnalytics     : 'com.google.firebase:firebase-analytics:17.2.2',
                 firebasePerformance   : 'com.google.firebase:firebase-perf:19.0.5',
                 // *** Crash reporting
-                crashlytics           : 'com.crashlytics.sdk.android:crashlytics:2.10.1',
+                crashlytics           : 'com.google.firebase:firebase-crashlytics:17.0.0-beta01',
                 // *** Retrofit
                 retrofit2             : "com.squareup.retrofit2:retrofit:$retrofit.retrofitVersion",
                 retrofit2GsonConverter: "com.squareup.retrofit2:converter-gson:$retrofit.retrofitVersion",
