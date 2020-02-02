@@ -1,6 +1,7 @@
 package com.feelsokman.androidtemplate.dagger2.di
 
 import com.feelsokman.androidtemplate.dagger2.SpotActivity
+import com.feelsokman.androidtemplate.dagger2.fragment.SpotFragment
 import com.feelsokman.androidtemplate.di.component.AppComponent
 import com.feelsokman.androidtemplate.scope.FeatureScope
 import dagger.Component
@@ -13,6 +14,7 @@ import dagger.Component
 interface SpotComponent {
 
     fun inject(spotActivity: SpotActivity)
+    fun inject(spotFragment: SpotFragment)
 
     @Component.Builder
     interface Builder {

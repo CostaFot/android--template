@@ -1,5 +1,6 @@
 package com.feelsokman.androidtemplate.dagger2.di
 
+import com.feelsokman.androidtemplate.dagger2.SpotActivityViewModelFactory
 import com.feelsokman.androidtemplate.dagger2.Wrapper
 import dagger.Module
 import dagger.Provides
@@ -11,4 +12,7 @@ class SpotModule(private val number: Int) {
     fun providesWrapperOfNumber(): Wrapper {
         return Wrapper(number)
     }
+
+    @Provides
+    internal fun providesSpotActivityViewModelFactory(wrapper: Wrapper) = SpotActivityViewModelFactory(wrapper)
 }
