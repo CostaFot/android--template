@@ -63,7 +63,12 @@ fun SpannableString.withClickableSpan(clickablePart: String, onClickListener: ()
         override fun onClick(widget: View?) = onClickListener.invoke()
     }
     val clickablePartStart = indexOf(clickablePart)
-    setSpan(clickableSpan, clickablePartStart, clickablePartStart + clickablePart.length, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+    setSpan(
+        clickableSpan,
+        clickablePartStart,
+        clickablePartStart + clickablePart.length,
+        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+    )
     return this
 }
 
