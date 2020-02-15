@@ -2,9 +2,7 @@ package com.feelsokman.androidtemplate.ui.fragments.host
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -18,13 +16,9 @@ import kotlinx.android.synthetic.main.fragment_host.*
 import timber.log.Timber
 import javax.inject.Inject
 
-class HostFragment : BaseFragment(), ViewBinder.Callback {
+class HostFragment : BaseFragment(R.layout.fragment_host), ViewBinder.Callback {
     override fun onButtonClicked() {
         //
-    }
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        return inflater.inflate(R.layout.fragment_host, container, false)
     }
 
     @Inject

@@ -5,7 +5,7 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textView4"
         android:layout_gravity="center"
         android:gravity="center"
         android:layout_width="match_parent"
@@ -13,12 +13,13 @@
         android:text="TextView"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2" />
 
-    <TextView
-        android:id="@+id/textView4"
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button"
+        android:id="@+id/butt"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="Click"
         android:textAppearance="@style/TextAppearance.MaterialComponents.Headline2" />
 </LinearLayout>

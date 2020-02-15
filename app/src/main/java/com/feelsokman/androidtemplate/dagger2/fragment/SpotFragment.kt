@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
+import androidx.lifecycle.observe
 import com.feelsokman.androidtemplate.R
 import com.feelsokman.androidtemplate.dagger2.SpotActivity
 import com.feelsokman.androidtemplate.dagger2.SpotActivityViewModel
@@ -30,12 +30,12 @@ class SpotFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        activityViewModel.textData.observe(viewLifecycleOwner, Observer {
-            textView3.text = it
-        })
-
-        activityViewModel.wrapperData.observe(viewLifecycleOwner, Observer {
+        activityViewModel.wrapperData.observe(viewLifecycleOwner) {
             textView4.text = it
-        })
+        }
+
+        butt.setOnClickListener {
+            activityViewModel.go()
+        }
     }
 }

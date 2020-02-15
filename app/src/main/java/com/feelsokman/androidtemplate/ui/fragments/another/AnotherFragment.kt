@@ -2,9 +2,7 @@ package com.feelsokman.androidtemplate.ui.fragments.another
 
 import android.content.Context
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -17,11 +15,7 @@ import com.feelsokman.androidtemplate.ui.fragments.another.viewmodel.AnotherView
 import timber.log.Timber
 import javax.inject.Inject
 
-class AnotherFragment : BaseFragment() {
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        return inflater.inflate(R.layout.fragment_another, container, false)
-    }
+class AnotherFragment : BaseFragment(R.layout.fragment_another) {
 
     @Inject
     internal lateinit var appPreferences: AppPreferences

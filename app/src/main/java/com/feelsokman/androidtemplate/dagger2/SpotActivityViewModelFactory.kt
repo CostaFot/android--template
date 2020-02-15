@@ -1,13 +1,17 @@
 package com.feelsokman.androidtemplate.dagger2
 
+import androidx.lifecycle.AbstractSavedStateViewModelFactory
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 
-class SpotActivityViewModelFactory(private val wrapper: Wrapper) : ViewModelProvider.Factory {
+class SpotActivityViewModelFactory(
+    private val wrapper: Wrapper,
+    spotActivity: SpotActivity
+) : AbstractSavedStateViewModelFactory(spotActivity, null) {
 
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+    override fun <T : ViewModel?> create(key: String, modelClass: Class<T>, handle: SavedStateHandle): T {
         @Suppress("UNCHECKED_CAST")
 
-        return SpotActivityViewModel(wrapper) as T
+        return SpotActivityViewModel(wrapper, handle) as T
     }
 }

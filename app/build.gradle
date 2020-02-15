@@ -140,6 +140,9 @@ dependencies {
     implementation rootProject.ext.dependencies.fragmentKtx
     implementation rootProject.ext.dependencies.liveDataKtx
 
+    // Saved state module for ViewModel
+    implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0"
+
     // Lifecycle
     implementation rootProject.ext.dependencies.lifecycle
     implementation rootProject.ext.dependencies.viewmodelKtx
