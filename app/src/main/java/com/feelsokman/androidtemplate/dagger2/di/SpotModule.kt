@@ -1,20 +1,23 @@
 package com.feelsokman.androidtemplate.dagger2.di
 
-import com.feelsokman.androidtemplate.dagger2.SpotActivity
+import android.app.Activity
 import com.feelsokman.androidtemplate.dagger2.SpotActivityViewModelFactory
 import com.feelsokman.androidtemplate.dagger2.Wrapper
 import dagger.Module
 import dagger.Provides
 
 @Module
-class SpotModule(private val number: Int, private val spotActivity: SpotActivity) {
+object SpotModule {
+
+    const val EXTRA_INT = "EXTRA_INT"
 
     @Provides
-    fun providesWrapperOfNumber(): Wrapper {
+    fun providesWrapperOfNumber(activity: Activity): Wrapper {
+        val number = activity.intent.getIntExtra(EXTRA_INT, 30)
         return Wrapper(number)
     }
 
     @Provides
-    internal fun providesSpotActivityViewModelFactory(wrapper: Wrapper) =
-        SpotActivityViewModelFactory(wrapper, spotActivity)
+    internal fun providesSpotActivityViewModelFactory(wrapper: Wrapper, activity: Activity) =
+        SpotActivityViewModelFactory(wrapper, activity)
 }

@@ -1,9 +1,11 @@
 package com.feelsokman.androidtemplate.dagger2.di
 
+import android.app.Activity
 import com.feelsokman.androidtemplate.dagger2.SpotActivity
 import com.feelsokman.androidtemplate.dagger2.fragment.SpotFragment
 import com.feelsokman.androidtemplate.di.component.AppComponent
 import com.feelsokman.androidtemplate.scope.FeatureScope
+import dagger.BindsInstance
 import dagger.Component
 
 @Component(
@@ -19,8 +21,10 @@ interface SpotComponent {
     @Component.Builder
     interface Builder {
 
+        @BindsInstance
+        fun activity(spotActivity: Activity): Builder
+
         fun build(): SpotComponent
         fun appComponent(appComponent: AppComponent): Builder
-        fun spotModule(spotModule: SpotModule): Builder
     }
 }

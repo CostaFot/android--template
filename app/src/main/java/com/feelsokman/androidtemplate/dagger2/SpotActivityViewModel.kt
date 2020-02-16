@@ -22,7 +22,9 @@ class SpotActivityViewModel(
 
     fun go() {
         viewModelScope.launch {
-            wrapperData.value = UUID.randomUUID().toString().apply { savedStateHandle.set("balls", this) }
+            wrapperData.value = UUID.randomUUID().toString().apply {
+                savedStateHandle.set("balls", this)
+            }
         }
     }
 
