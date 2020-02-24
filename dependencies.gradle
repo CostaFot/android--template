@@ -5,8 +5,8 @@ allprojects {
                 androidXVersion  : "1.0.0",
                 livedata         : '2.0.0-rc01',
                 minSdkVersion    : 21,
-                targetSdkVersion : 28,
-                compileSdkVersion: 28,
+                targetSdkVersion : 29,
+                compileSdkVersion: 29,
         ]
         retrofit = [
                 retrofitVersion: '2.7.1',
