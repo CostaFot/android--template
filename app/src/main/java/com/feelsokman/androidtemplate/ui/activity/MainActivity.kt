@@ -3,19 +3,19 @@ package com.feelsokman.androidtemplate.ui.activity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import androidx.activity.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.feelsokman.androidtemplate.R
+import com.feelsokman.androidtemplate.extensions.logDebug
 import com.feelsokman.androidtemplate.ui.activity.viewmodel.MainViewModel
 import com.feelsokman.androidtemplate.ui.activity.viewmodel.MainViewModelFactory
 import com.feelsokman.androidtemplate.ui.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import timber.log.Timber
 import javax.inject.Inject
 
 class MainActivity : BaseActivity() {
@@ -23,9 +23,7 @@ class MainActivity : BaseActivity() {
     @Inject
     internal lateinit var factoryMainViewModel: MainViewModelFactory
 
-    private val mainViewModel: MainViewModel by lazy {
-        ViewModelProviders.of(this, factoryMainViewModel).get(MainViewModel::class.java)
-    }
+    private val mainViewModel by viewModels<MainViewModel> { factoryMainViewModel }
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,13 +39,13 @@ class MainActivity : BaseActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.hostFragment -> Timber.tag("NavigationLogger").d("hostFragment showing!")
-                R.id.anotherFragment -> Timber.tag("NavigationLogger").d("anotherFragment showing!")
+                R.id.hostFragment -> logDebug { "hostFragment showing!" }
+                R.id.anotherFragment -> logDebug { "anotherFragment showing!" }
             }
         }
 
         mainViewModel.textData.observe(this, Observer {
-            Timber.tag("NavigationLogger").e("MainActivity $it")
+            logDebug { "MainActivity $it" }
         })
     }
 

@@ -29,7 +29,7 @@ class AnotherFragment : BaseFragment() {
     internal lateinit var factory: AnotherViewModelFactory
 
     // Get a reference to the ViewModel scoped to this Fragment
-    private val viewModelAnother by viewModels<AnotherViewModel>({ this }, { factory })
+    private val viewModelAnother by viewModels<AnotherViewModel> { factory }
     // Get a reference to the ViewModel scoped to its Activity
     private val activityViewModel by activityViewModels<MainViewModel>()
 

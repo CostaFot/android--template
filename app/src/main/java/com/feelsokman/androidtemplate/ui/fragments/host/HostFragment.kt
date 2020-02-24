@@ -28,7 +28,7 @@ class HostFragment : BaseFragment(), ViewBinder.Callback {
     @Inject
     internal lateinit var factory: HostViewModelFactory
     // Get a reference to the ViewModel scoped to this Fragment
-    private val viewModelHost by viewModels<HostViewModel>({ this }, { factory })
+    private val viewModelHost by viewModels<HostViewModel> { factory }
     // Get a reference to the ViewModel scoped to its Activity
     private val activityViewModel by activityViewModels<MainViewModel>()
 
