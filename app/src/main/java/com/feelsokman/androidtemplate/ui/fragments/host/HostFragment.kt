@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.observe
 import com.feelsokman.androidtemplate.databinding.FragmentHostBinding
 import com.feelsokman.androidtemplate.extensions.logDebug
 import com.feelsokman.androidtemplate.ui.activity.viewmodel.MainViewModel
@@ -45,11 +46,11 @@ class HostFragment : BaseFragment(), ViewBinder.Callback {
             logDebug { "HostFragment Activity string is $it" }
         })
 
-        viewModelHost.textData.observe(viewLifecycleOwner, Observer {
+        viewModelHost.textData.observe(viewLifecycleOwner) {
             if (!it.isNullOrBlank()) {
                 binding.button.text = it
             }
-        })
+        }
 
         binding.button.setOnClickListener {
             viewModelHost.getTodos()

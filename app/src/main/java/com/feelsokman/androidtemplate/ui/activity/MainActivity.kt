@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
-import androidx.lifecycle.Observer
+import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
@@ -44,9 +44,9 @@ class MainActivity : BaseActivity() {
             }
         }
 
-        mainViewModel.textData.observe(this, Observer {
+        mainViewModel.textData.observe(this) {
             logDebug { "MainActivity $it" }
-        })
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

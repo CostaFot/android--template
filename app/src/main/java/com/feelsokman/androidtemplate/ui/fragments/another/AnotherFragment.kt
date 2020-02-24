@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
+import androidx.lifecycle.observe
 import com.feelsokman.androidtemplate.R
 import com.feelsokman.androidtemplate.preferences.AppPreferences
 import com.feelsokman.androidtemplate.ui.activity.viewmodel.MainViewModel
@@ -42,12 +42,12 @@ class AnotherFragment : BaseFragment() {
 
         viewModelAnother.observeStringFromStorage()
 
-        activityViewModel.textData.observe(viewLifecycleOwner, Observer {
+        activityViewModel.textData.observe(viewLifecycleOwner) {
             Timber.tag("NavigationLogger").e("AnotherFragment Activity string is $it")
-        })
+        }
 
-        viewModelAnother.textData.observe(viewLifecycleOwner, Observer { stringFromStorage ->
+        viewModelAnother.textData.observe(viewLifecycleOwner) { stringFromStorage ->
             Timber.tag("NavigationLogger").e("AnotherFragment storage string is $stringFromStorage")
-        })
+        }
     }
 }
