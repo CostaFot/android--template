@@ -9,9 +9,7 @@ apply plugin: 'com.google.firebase.crashlytics'
 apply plugin: 'com.google.firebase.firebase-perf'
 */
 
-
 apply from: '../buildsystem/quality/quality.gradle'
-apply from: '../buildsystem/quality/ktlint.gradle'
 
 /*
 
@@ -143,6 +141,7 @@ dependencies {
     implementation rootProject.ext.dependencies.annotation
     implementation rootProject.ext.dependencies.fragmentKtx
     implementation rootProject.ext.dependencies.liveDataKtx
+    implementation 'androidx.savedstate:savedstate-ktx:1.1.0-alpha01'
 
     // Lifecycle
     implementation rootProject.ext.dependencies.lifecycle

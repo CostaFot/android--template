@@ -83,7 +83,6 @@ task static_analysis(type: GradleBuild) {
             'assembleDebug', // required for findbugs
             'pmd',
             'checkstyle',
-            'ktlint',
             'lintDebug']
 
     doLast {
