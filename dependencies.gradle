@@ -130,12 +130,7 @@ allprojects {
                 rxBindingMaterial     : 'com.jakewharton.rxbinding3:rxbinding-material:3.0.0-alpha2',
                 rxView                : 'com.jakewharton.rxbinding2:rxbinding:2.1.1',
                 rxViewV7              : 'com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.1.1',
-                rxViewDesign          : 'com.jakewharton.rxbinding2:rxbinding-design:2.1.1',
-                // *** Less important android block
-                supportV4             : "androidx.legacy:legacy-support-v4:$androidVersions.androidXVersion",
-                supportV13            : "androidx.legacy:legacy-support-v13:$androidVersions.androidXVersion",
-                customTabs            : "androidx.browser:browser:$androidVersions.androidXVersion",
-                multidex              : 'com.android.support:multidex:1.0.3',
+                rxViewDesign          : 'com.jakewharton.rxbinding2:rxbinding-design:2.1.1'
 
         ]
         testDependencies = [
