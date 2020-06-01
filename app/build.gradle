@@ -249,3 +249,6 @@ dependencies {
     debugImplementation rootProject.ext.testDependencies.fragmentScenario
 
 }
+
+
+task helloWorld(type: HelloWorld)
