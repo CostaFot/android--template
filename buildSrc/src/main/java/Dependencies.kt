@@ -64,30 +64,35 @@ object Libs {
     const val materialPreLolipop    = "com.github.rey5137:material:1.2.5" 
     const val lottie                = "com.airbnb.android:lottie:3.0.7" 
     const val zxing                 = "com.google.zxing:core:3.2.1" 
-    const val boommenu              = "com.nightonke:boommenu:2.1.1" 
-    const val lovelydialog          = "com.yarolegovich:lovely-dialog:1.1.0" 
-    const val bottomnav             = "it.sephiroth.android.library.bottomnavigation:bottom-navigation:3.0.0" 
-    const val bubbleShowCase        = "com.elconfidencial.bubbleshowcase:bubbleshowcase:1.3.1" 
-    const val flashbar              = "com.andrognito.flashbar:flashbar:1.0.3" 
-    const val bubbleNavigation      = "com.gauravk.bubblenavigation:bubblenavigation:1.0.7" 
-    const val materialEditText      = "com.github.florent37:materialtextfield:1.0.7" 
-    const val shimmer               = "com.facebook.shimmer:shimmer:0.5.0" 
-    const val switches              = "com.github.angads25:toggle:1.1.0" 
-    const val audioviz              = "com.cleveroad:audiovisualization:1.0.1" 
+    const val boommenu              = "com.nightonke:boommenu:2.1.1"
+    const val lovelydialog = "com.yarolegovich:lovely-dialog:1.1.0"
+    const val bottomnav = "it.sephiroth.android.library.bottomnavigation:bottom-navigation:3.0.0"
+    const val bubbleShowCase = "com.elconfidencial.bubbleshowcase:bubbleshowcase:1.3.1"
+    const val flashbar = "com.andrognito.flashbar:flashbar:1.0.3"
+    const val bubbleNavigation = "com.gauravk.bubblenavigation:bubblenavigation:1.0.7"
+    const val materialEditText = "com.github.florent37:materialtextfield:1.0.7"
+    const val shimmer = "com.facebook.shimmer:shimmer:0.5.0"
+    const val switches = "com.github.angads25:toggle:1.1.0"
+    const val bounceWithSound = "com.cleveroad:audiovisualization:1.0.1"
+
     // *** Animations
-    const val animations1           = "androidx.core:core:1.3.0-alpha01" 
-    const val animations2           = "com.daimajia.easing:library:2.1@aar" 
-    const val animations3           = "com.daimajia.androidanimations:library:2.3@aar" 
+    const val animations1 = "com.daimajia.easing:library:2.1@aar"
+    const val animations2 = "com.daimajia.androidanimations:library:2.3@aar"
+
     // *** GIF
-    const val gif                   = "pl.droidsonroids.gif:android-gif-drawable:1.2.17" 
+    const val gif = "pl.droidsonroids.gif:android-gif-drawable:1.2.17"
+
     // *** Logger
-    const val timberLogger          = "com.jakewharton.timber:timber:4.7.1" 
+    const val timberLogger = "com.jakewharton.timber:timber:4.7.1"
+
     // *** Linting
-    const val kotlinLinter          = "com.pinterest:ktlint:0.33.0" 
+    const val kotlinLinter = "com.pinterest:ktlint:0.33.0"
+
     // *** Memory leak detection
-    const val leakCanary            = "com.squareup.leakcanary:leakcanary-android:2.2" 
+    const val leakCanary = "com.squareup.leakcanary:leakcanary-android:2.2"
+
     // *** RxBinding
-    const val rxBindingMaterial     = "com.jakewharton.rxbinding3:rxbinding-material:3.0.0-alpha2" 
+    const val rxBindingMaterial = "com.jakewharton.rxbinding3:rxbinding-material:3.0.0-alpha2"
     const val rxView                = "com.jakewharton.rxbinding2:rxbinding:2.1.1" 
     const val rxViewV7              = "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.1.1" 
     const val rxViewDesign          = "com.jakewharton.rxbinding2:rxbinding-design:2.1.1"
