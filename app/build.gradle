@@ -133,7 +133,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
     // Basic Google components
-    implementation Libs.appCompatX
+    implementation Support.appCompat
     implementation rootProject.ext.dependencies.material
     implementation rootProject.ext.dependencies.cardViewX
     implementation rootProject.ext.dependencies.constraintLayoutX
