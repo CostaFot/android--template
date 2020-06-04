@@ -5,13 +5,6 @@ object Sdk {
 }
 
 object Versions {
-    const val ANDROIDX_TEST_EXT = "1.1.1"
-    const val ANDROIDX_TEST = "1.2.0"
-    const val APPCOMPAT = "1.1.0"
-    const val CONSTRAINT_LAYOUT = "1.1.3"
-    const val CORE_KTX = "1.2.0"
-    const val ESPRESSO_CORE = "3.2.0"
-    const val JUNIT = "4.13"
     const val KTLINT = "0.36.0"
     const val RETROFIT = "2.7.1"
     const val OKHTTP = "4.4.0"
@@ -24,12 +17,26 @@ object Versions {
     const val ARROW = "0.10.2"
 }
 
+object Plugins {
+    const val AGP = "com.android.tools.build:gradle:${BuildPluginsVersion.AGP}"
+    const val DETEKT = "1.7.4"
+    const val KOTLIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:${BuildPluginsVersion.KOTLIN}"
+    const val KTLINT = "9.2.1"
+    const val DEPENDENCY_VERSION_CHECKER =
+        "com.github.ben-manes:gradle-versions-plugin:${BuildPluginsVersion.DEPENDENCY_VERSION_CHECKER}"
+    const val GOOGLE_SERVICES = "com.google.gms:google-services:${BuildPluginsVersion.GOOGLE_SERVICES}"
+    const val CRASHLYTICS = "com.google.firebase:firebase-crashlytics-gradle:${BuildPluginsVersion.CRASHLYTICS}"
+    const val PERFORMANCE = "com.google.firebase:perf-plugin:1.3.1"
+}
+
 object BuildPluginsVersion {
     const val AGP = "4.0.0"
     const val DETEKT = "1.7.4"
     const val KOTLIN = "1.3.72"
     const val KTLINT = "9.2.1"
-    const val VERSIONS_PLUGIN = "0.28.0"
+    const val DEPENDENCY_VERSION_CHECKER = "0.28.0"
+    const val GOOGLE_SERVICES = "4.3.3"
+    const val CRASHLYTICS = "2.1.1"
 }
 
 object Support {
@@ -43,27 +50,21 @@ object Support {
 }
 
 object Libs {
-    // *** JSON helpers
-    const val gson                  = "com.google.code.gson:gson:2.8.6" 
-    // *** Shared preferences
-    const val kotlinpref            = "com.chibatching.kotpref:kotpref:2.8.0" 
-    // *** Event broadcasting
-    const val otto                  = "com.squareup:otto:1.3.8" 
-    // *** Network Watcher
-    const val reactiveNetwork       = "com.github.pwittchen:reactivenetwork-rx2:3.0.3" 
-    // *** ButterKnife
-    const val butterKnife           = "com.jakewharton:butterknife:8.8.1" 
-    const val butterKnifeCompiler   = "com.jakewharton:butterknife-compiler:8.8.1" 
-    // *** Geolocation
-    const val googleLocation        = "com.google.android.gms:play-services-location:16.0.0" 
+    const val gson = "com.google.code.gson:gson:2.8.6"
+    const val kotlinpref = "com.chibatching.kotpref:kotpref:2.8.0"
+    const val otto = "com.squareup:otto:1.3.8"
+    const val reactiveNetwork = "com.github.pwittchen:reactivenetwork-rx2:3.0.3"
+    const val butterKnife = "com.jakewharton:butterknife:8.8.1"
+    const val butterKnifeCompiler = "com.jakewharton:butterknife-compiler:8.8.1"
+    const val googleLocation = "com.google.android.gms:play-services-location:16.0.0"
+
     // *** Toasty (leave this at 1.3.0 as the newer versions took away functionality)
-    const val toast                 = "com.github.GrenderG:Toasty:1.3.0" 
-    // *** Layout stuff
-    const val groupie               = "com.xwray:groupie:2.7.0" 
-    const val groupieKtx            = "com.xwray:groupie-kotlin-android-extensions:2.7.0" 
-    const val materialPreLolipop    = "com.github.rey5137:material:1.2.5" 
-    const val lottie                = "com.airbnb.android:lottie:3.0.7" 
-    const val zxing                 = "com.google.zxing:core:3.2.1" 
+    const val toast = "com.github.GrenderG:Toasty:1.3.0"
+    const val groupie = "com.xwray:groupie:2.7.0"
+    const val groupieKtx = "com.xwray:groupie-kotlin-android-extensions:2.7.0"
+    const val materialPreLolipop = "com.github.rey5137:material:1.2.5"
+    const val lottie = "com.airbnb.android:lottie:3.0.7"
+    const val zxing = "com.google.zxing:core:3.2.1"
     const val boommenu              = "com.nightonke:boommenu:2.1.1"
     const val lovelydialog = "com.yarolegovich:lovely-dialog:1.1.0"
     const val bottomnav = "it.sephiroth.android.library.bottomnavigation:bottom-navigation:3.0.0"
@@ -74,24 +75,12 @@ object Libs {
     const val shimmer = "com.facebook.shimmer:shimmer:0.5.0"
     const val switches = "com.github.angads25:toggle:1.1.0"
     const val bounceWithSound = "com.cleveroad:audiovisualization:1.0.1"
-
-    // *** Animations
     const val animations1 = "com.daimajia.easing:library:2.1@aar"
     const val animations2 = "com.daimajia.androidanimations:library:2.3@aar"
-
-    // *** GIF
     const val gif = "pl.droidsonroids.gif:android-gif-drawable:1.2.17"
-
-    // *** Logger
     const val timberLogger = "com.jakewharton.timber:timber:4.7.1"
-
-    // *** Linting
     const val kotlinLinter = "com.pinterest:ktlint:0.33.0"
-
-    // *** Memory leak detection
     const val leakCanary = "com.squareup.leakcanary:leakcanary-android:2.2"
-
-    // *** RxBinding
     const val rxBindingMaterial = "com.jakewharton.rxbinding3:rxbinding-material:3.0.0-alpha2"
     const val rxView                = "com.jakewharton.rxbinding2:rxbinding:2.1.1" 
     const val rxViewV7              = "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.1.1" 

@@ -1,5 +1,5 @@
 plugins {
-    id("com.github.ben-manes.versions") version BuildPluginsVersion.VERSIONS_PLUGIN
+    id("com.github.ben-manes.versions") version BuildPluginsVersion.DEPENDENCY_VERSION_CHECKER
 }
 
 buildscript {
@@ -9,15 +9,11 @@ buildscript {
         maven(url = "https://maven.fabric.io/public")
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:${BuildPluginsVersion.AGP}")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${BuildPluginsVersion.KOTLIN}")
-        // Firebase
-        classpath("com.google.gms:google-services:4.3.3")
-        classpath("com.google.firebase:firebase-crashlytics-gradle:2.1.1")
-        // Dependency version checker
-        classpath("com.github.ben-manes:gradle-versions-plugin:${BuildPluginsVersion.VERSIONS_PLUGIN}")
-        /*// Add the dependency for the Performance Monitoring plugin
-         classpath('com.google.firebase:perf-plugin:1.3.1'*/
+        classpath(Plugins.AGP)
+        classpath(Plugins.KOTLIN)
+        classpath(Plugins.GOOGLE_SERVICES)
+        classpath(Plugins.CRASHLYTICS)
+        classpath(Plugins.DEPENDENCY_VERSION_CHECKER)
     }
 }
 
