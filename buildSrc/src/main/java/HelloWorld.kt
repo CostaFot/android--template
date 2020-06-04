@@ -6,7 +6,7 @@ open class HelloWorld : DefaultTask() {
 
     init {
         group = "mycustomtasks" // This will be the group name for your task.
-        description = "Writes hello world to a file"
+        description = "Writes hello world"
     }
 
     @TaskAction // Marks a function as the action to run when the task is executed.
