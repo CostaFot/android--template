@@ -20,3 +20,12 @@ dependencies {
     implementation(gradleApi())
     implementation(localGroovy())
 }
+
+gradlePlugin {
+    plugins {
+        register("greet-plugin") {
+            id = "greet"
+            implementationClass = "GreetPlugin"
+        }
+    }
+}
