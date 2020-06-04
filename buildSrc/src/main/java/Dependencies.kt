@@ -123,10 +123,10 @@ object Navigation {
 
 object Dagger {
     const val dagger = "com.google.dagger:dagger:${Versions.DAGGER}"
-    const val daggerCompiler = "com.google.dagger:dagger-compiler:${Versions.DAGGER}"
-    const val daggerAndroid = "com.google.dagger:dagger-android:${Versions.DAGGER}"
-    const val daggerAndroidSupport = "com.google.dagger:dagger-android-support:${Versions.DAGGER}"
-    const val daggerProcessor = "com.google.dagger:dagger-android-processor:${Versions.DAGGER}"
+    const val compiler = "com.google.dagger:dagger-compiler:${Versions.DAGGER}"
+    const val android = "com.google.dagger:dagger-android:${Versions.DAGGER}"
+    const val androidSupport = "com.google.dagger:dagger-android-support:${Versions.DAGGER}"
+    const val processor = "com.google.dagger:dagger-android-processor:${Versions.DAGGER}"
 }
 
 object Room {
@@ -159,8 +159,9 @@ object Ktx {
     const val collections = "androidx.collection:collection-ktx:1.1.0"
     const val reactiveStreams = "androidx.lifecycle:lifecycle-reactivestreams-ktx:2.2.0"
     const val workManager = "android.arch.work:work-runtime-ktx:1.0.0"
-    const val liveDataK = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+    const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
     const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+    const val savedState = "androidx.savedstate:savedstate-ktx:1.1.0-alpha01"
 }
 
 object Coroutines {
