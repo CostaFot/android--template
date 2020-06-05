@@ -1,6 +1,5 @@
 plugins {
     id("com.github.ben-manes.versions") version BuildPluginsVersion.DEPENDENCY_VERSION_CHECKER
-    greet
 }
 
 buildscript {
