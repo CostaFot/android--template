@@ -3,6 +3,7 @@ plugins {
     kotlin("android")
     id("kotlin-android-extensions")
     id("kotlin-kapt")
+    id("greet")
 }
 
 android {
@@ -197,10 +198,3 @@ dependencies {
 
 
 }
-
-tasks.register("helloWorld", HelloWorld::class) {
-    doLast {
-        println("Hello, World")
-    }
-}
-
