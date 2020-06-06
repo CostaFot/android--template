@@ -5,6 +5,7 @@ plugins {
     id("kotlin-kapt")
     greet
     todo
+    id("packaging")
 }
 
 android {

@@ -41,5 +41,9 @@ gradlePlugin {
             id = "todo"
             implementationClass = "plugins.jsonplaceholder.TodoPlugin"
         }
+        register("packaging-plugin") {
+            id = "packaging"
+            implementationClass = "plugins.packaging.PackagingPlugin"
+        }
     }
 }
