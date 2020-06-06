@@ -102,11 +102,11 @@ android {
     }
 
     // Configure the extension using a DSL block
-    configure<plugins.greet.GreetingPluginExtension> {
+    greeting {
         // Replace defaults here if you want
     }
 
-    configure<plugins.jsonplaceholder.TodoPluginExtension> {
+    todo {
         // Replace defaults here if you want
         id = 2
     }
