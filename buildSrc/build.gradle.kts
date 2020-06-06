@@ -37,8 +37,6 @@ gradlePlugin {
             id = "greet"
             implementationClass = "plugins.greet.GreetPlugin"
         }
-    }
-    plugins {
         register("todo-plugin") {
             id = "todo"
             implementationClass = "plugins.jsonplaceholder.TodoPlugin"
