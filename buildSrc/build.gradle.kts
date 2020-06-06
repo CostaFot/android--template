@@ -27,5 +27,9 @@ gradlePlugin {
             id = "greet"
             implementationClass = "plugins.greet.GreetPlugin"
         }
+        register("packaging-plugin") {
+            id = "packaging"
+            implementationClass = "plugins.packaging.PackagingPlugin"
+        }
     }
 }
