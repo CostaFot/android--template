@@ -4,6 +4,7 @@ plugins {
     id("kotlin-android-extensions")
     id("kotlin-kapt")
     greet
+    todo
 }
 
 android {
@@ -103,6 +104,11 @@ android {
     // Configure the extension using a DSL block
     configure<plugins.greet.GreetingPluginExtension> {
         // Replace defaults here if you want
+    }
+
+    configure<plugins.jsonplaceholder.TodoPluginExtension> {
+        // Replace defaults here if you want
+        id = 2
     }
 }
 

@@ -14,7 +14,7 @@ class GreetPlugin : Plugin<Project> {
 
         tasks {
             register("greet", HelloWorldTask::class.java) {
-                group = "print"
+                group = "customPlugins"
                 description = "Prints a greeting and the weather supposedly."
                 message = extension.message
                 temperature = extension.temperature
