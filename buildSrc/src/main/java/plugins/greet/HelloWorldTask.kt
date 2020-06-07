@@ -1,6 +1,7 @@
 package plugins.greet
 
 import org.gradle.api.DefaultTask
+import org.gradle.api.GradleException
 import org.gradle.api.logging.Logging
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.TaskAction
@@ -48,10 +49,14 @@ open class HelloWorldTask @Inject constructor(
                 it.name.endsWith(".xml")
             }.forEach {
                 logger.lifecycle(it.name)
+                val text = it.readText()
+                if (text.contains("@color/")) {
+                    throw GradleException("Found hardcoded colour assigned in layout file ${it.name}")
+                }
                 builder.appendln(it.name)
             }
 
-            File(parameters.projectDir, "choppa.txt").writeText(builder.toString())
+            // File(parameters.projectDir, "choppa.txt").writeText(builder.toString())
 
             // read stuff in gitignore file for fun
             val ff = File(parameters.projectDir, ".gitignore").readText()

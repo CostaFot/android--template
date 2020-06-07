@@ -5,7 +5,7 @@ plugins {
     id("kotlin-kapt")
     greet
     todo
-    id("packaging")
+    packaging
 }
 
 android {
@@ -91,8 +91,6 @@ android {
         unitTests.isIncludeAndroidResources = true
     }
 
-    packagingBoilerPlate()
-
     buildFeatures {
         viewBinding = true
     }
@@ -100,16 +98,6 @@ android {
     lintOptions {
         isWarningsAsErrors = true
         isAbortOnError = true
-    }
-
-    // Configure the extension using a DSL block
-    greeting {
-        // Replace defaults here if you want
-    }
-
-    todo {
-        // Replace defaults here if you want
-        id = 2
     }
 }
 
@@ -197,3 +185,15 @@ dependencies {
     debugImplementation(TestingLib.fragmentScenario)
 
 }
+
+
+// Configure the extension using a DSL block
+greeting {
+    // Replace defaults here if you want
+}
+
+todo {
+    // Replace defaults here if you want
+    id = 2
+}
+
