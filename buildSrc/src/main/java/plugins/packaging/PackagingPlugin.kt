@@ -6,7 +6,9 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.logging.Logging
 
-
+/**
+ * Can use this plugin or an extension function. Not sure which is preferable tbh
+ */
 @Suppress("unused")
 class PackagingPlugin : Plugin<Project> {
 

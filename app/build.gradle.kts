@@ -3,8 +3,9 @@ plugins {
     kotlin("android")
     id("kotlin-android-extensions")
     id("kotlin-kapt")
-    id("greet")
-    id("packaging")
+    greet
+    todo
+    packaging
 }
 
 android {
@@ -34,7 +35,7 @@ android {
     }
 
     buildTypes {
-        getByName("release") {
+        releaseBuild {
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -44,7 +45,7 @@ android {
             versionNameSuffix = "-release"
         }
 
-        getByName("debug") {
+        debugBuild {
             isMinifyEnabled = false
             isDebuggable = true
             applicationIdSuffix = ".debug"
@@ -88,20 +89,6 @@ android {
     testOptions {
         unitTests.isReturnDefaultValues = true
         unitTests.isIncludeAndroidResources = true
-    }
-
-    packagingOptions {
-        exclude("META-INF/DEPENDENCIES")
-        exclude("META-INF/LICENSE ")
-        exclude("META-INF/LICENSE.txt ")
-        exclude("META-INF/license.txt ")
-        exclude("META-INF/NOTICE ")
-        exclude("META-INF/NOTICE.txt ")
-        exclude("META-INF/notice.txt ")
-        exclude("META-INF/LGPL2.1 ")
-        exclude("META-INF/MANIFEST.MF ")
-        exclude("META-INF/rxjava.properties ")
-        exclude("META-INF/ASL2.0 ")
     }
 
     buildFeatures {
@@ -197,5 +184,16 @@ dependencies {
 
     debugImplementation(TestingLib.fragmentScenario)
 
-
 }
+
+
+// Configure the extension using a DSL block
+greeting {
+    // Replace defaults here if you want
+}
+
+todo {
+    // Replace defaults here if you want
+    id = 2
+}
+
