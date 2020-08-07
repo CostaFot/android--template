@@ -4,6 +4,7 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.create
 import org.gradle.kotlin.dsl.invoke
+import plugins.stuff.chop
 
 @Suppress("unused")
 class GreetPlugin : Plugin<Project> {
@@ -20,6 +21,8 @@ class GreetPlugin : Plugin<Project> {
                 temperature = extension.temperature
 
                 dependsOn(":dependencyUpdates")
+
+                chop()
             }
         }
     }
