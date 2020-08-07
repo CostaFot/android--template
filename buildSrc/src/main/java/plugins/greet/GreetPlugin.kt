@@ -19,7 +19,7 @@ class GreetPlugin : Plugin<Project> {
                 message = extension.message
                 temperature = extension.temperature
 
-                //dependsOn(":dependencyUpdates")
+                dependsOn(":dependencyUpdates")
             }
         }
     }
