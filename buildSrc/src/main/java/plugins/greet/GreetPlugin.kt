@@ -18,6 +18,8 @@ class GreetPlugin : Plugin<Project> {
                 description = "Prints a greeting and the weather supposedly."
                 message = extension.message
                 temperature = extension.temperature
+
+                //dependsOn(":dependencyUpdates")
             }
         }
     }

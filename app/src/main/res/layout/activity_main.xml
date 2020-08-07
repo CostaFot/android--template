@@ -33,7 +33,7 @@
                     android:layout_height="48dp"
                     android:layout_gravity="center"
                     android:src="@drawable/ic_info"
-                    android:tint="?attr/colorControlHighlight"
+                    app:tint="?attr/colorControlHighlight"
                     tools:ignore="ContentDescription" />
 
             </androidx.appcompat.widget.Toolbar>
