@@ -1,4 +1,4 @@
-package plugins.jsonplaceholder
+package myplugins.jsonplaceholder
 
 data class ApiTodo(
     val id: Int?,

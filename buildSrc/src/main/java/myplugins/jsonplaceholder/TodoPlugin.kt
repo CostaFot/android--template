@@ -1,11 +1,11 @@
-package plugins.jsonplaceholder
+package myplugins.jsonplaceholder
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.create
 import org.gradle.kotlin.dsl.invoke
-import plugins.greet.GreetingPluginExtension
-import plugins.greet.HelloWorldTask
+import myplugins.greet.GreetingPluginExtension
+import myplugins.greet.HelloWorldTask
 
 @Suppress("unused")
 class TodoPlugin : Plugin<Project> {

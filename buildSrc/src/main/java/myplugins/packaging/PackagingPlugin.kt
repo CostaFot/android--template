@@ -1,4 +1,4 @@
-package plugins.packaging
+package myplugins.packaging
 
 import com.android.build.gradle.BaseExtension
 import org.gradle.api.Action

@@ -1,4 +1,4 @@
-package plugins.stuff
+package myplugins.stuff
 
 data class Available(
         val integration: Any?,
@@ -19,11 +19,11 @@ data class CurrentGradle(
 )
 
 data class DependencyOutDated(
-        val available: Available,
-        val group: String,
-        val name: String,
-        val projectUrl: String?,
-        val version: String
+    val available: Available,
+    val group: String,
+    val name: String,
+    val projectUrl: String?,
+    val version: String
 )
 
 data class DependencyExceeded(
@@ -55,20 +55,20 @@ data class Exceeded(
 )
 
 data class Gradle(
-        val current: CurrentGradle,
-        val enabled: Boolean,
-        val nightly: Nightly,
-        val releaseCandidate: ReleaseCandidate,
-        val running: Running
+    val current: CurrentGradle,
+    val enabled: Boolean,
+    val nightly: Nightly,
+    val releaseCandidate: ReleaseCandidate,
+    val running: Running
 )
 
 data class GradleResults(
-        val count: Int,
-        val current: Current,
-        val exceeded: Exceeded,
-        val gradle: Gradle,
-        val outdated: Outdated,
-        val unresolved: Unresolved
+    val count: Int,
+    val current: Current,
+    val exceeded: Exceeded,
+    val gradle: Gradle,
+    val outdated: Outdated,
+    val unresolved: Unresolved
 )
 
 data class Nightly(

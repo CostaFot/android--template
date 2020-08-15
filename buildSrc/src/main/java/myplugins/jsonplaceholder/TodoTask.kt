@@ -1,4 +1,4 @@
-package plugins.jsonplaceholder
+package myplugins.jsonplaceholder
 
 import com.android.build.gradle.internal.scope.GlobalScope
 import com.google.gson.GsonBuilder

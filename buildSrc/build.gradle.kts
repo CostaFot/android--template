@@ -1,5 +1,8 @@
+import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
+
 plugins {
     `kotlin-dsl`
+    id("com.github.ben-manes.versions") version  "0.28.0"
 }
 
 repositories {
@@ -7,6 +10,7 @@ repositories {
     google()
     jcenter()
 }
+
 
 dependencies {
     /* Example Dependency */
@@ -35,15 +39,15 @@ gradlePlugin {
     plugins {
         register("greet-plugin") {
             id = "greet"
-            implementationClass = "plugins.greet.GreetPlugin"
+            implementationClass = "myplugins.greet.GreetPlugin"
         }
         register("todo-plugin") {
             id = "todo"
-            implementationClass = "plugins.jsonplaceholder.TodoPlugin"
+            implementationClass = "myplugins.jsonplaceholder.TodoPlugin"
         }
         register("packaging-plugin") {
             id = "packaging"
-            implementationClass = "plugins.packaging.PackagingPlugin"
+            implementationClass = "myplugins.packaging.PackagingPlugin"
         }
     }
 }

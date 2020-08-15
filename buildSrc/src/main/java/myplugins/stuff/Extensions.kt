@@ -1,4 +1,4 @@
-package plugins.stuff
+package myplugins.stuff
 
 import java.io.BufferedReader
 import java.io.File

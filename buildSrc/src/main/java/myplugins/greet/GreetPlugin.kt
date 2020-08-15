@@ -1,10 +1,10 @@
-package plugins.greet
+package myplugins.greet
 
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.create
 import org.gradle.kotlin.dsl.invoke
-import plugins.stuff.chop
+import myplugins.stuff.chop
 
 @Suppress("unused")
 class GreetPlugin : Plugin<Project> {

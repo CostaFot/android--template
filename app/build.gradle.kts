@@ -164,7 +164,7 @@ dependencies {
     implementation(TestingLib.testCoreX)
 
     testImplementation(TestingLib.testArchCompX)
-    testImplementation(TestingLib.robolectric)
+    //testImplementation(TestingLib.robolectric)
     testImplementation(TestingLib.mockitoCore)
     testImplementation(TestingLib.mockitoKotlin)
     testImplementation(TestingLib.mockitoInline)

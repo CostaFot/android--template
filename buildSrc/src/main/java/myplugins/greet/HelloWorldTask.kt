@@ -1,4 +1,4 @@
-package plugins.greet
+package myplugins.greet
 
 import org.gradle.api.DefaultTask
 import org.gradle.api.GradleException
