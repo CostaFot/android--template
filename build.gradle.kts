@@ -2,21 +2,20 @@ import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 
 
 plugins {
-    id("com.github.ben-manes.versions") version BuildPluginsVersion.DEPENDENCY_VERSION_CHECKER
+    id("com.github.ben-manes.versions") version "0.29.0"
 }
 
 buildscript {
     repositories {
         google()
         jcenter()
-        maven(url = "https://maven.fabric.io/public")
     }
     dependencies {
-        classpath(Plugins.AGP)
-        classpath(Plugins.KOTLIN)
-        classpath(Plugins.GOOGLE_SERVICES)
-        classpath(Plugins.CRASHLYTICS)
-        classpath(Plugins.DEPENDENCY_VERSION_CHECKER)
+        classpath("com.android.tools.build:gradle:4.0.1")
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.72")
+        classpath("com.github.ben-manes:gradle-versions-plugin:0.29.0")
+        classpath("com.google.firebase:firebase-crashlytics-gradle:2.2.0")
+        classpath("com.google.gms:google-services:4.3.3")
     }
 }
 
@@ -29,7 +28,6 @@ allprojects {
         maven(url = "https://jitpack.io")
         maven(url = "https://maven.google.com/")
         maven(url = "http://dl.bintray.com/piasy/maven")
-        maven(url = "https://dl.bintray.com/arrow-kt/arrow-kt/")
     }
 }
 

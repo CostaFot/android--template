@@ -103,7 +103,7 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    implementation(kotlin("stdlib-jdk7"))
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72")
 
     implementation(Support.appCompat)
     implementation(Support.material)
@@ -114,7 +114,6 @@ dependencies {
     implementation(Ktx.fragment)
     implementation(Ktx.liveData)
     implementation(Ktx.savedState)
-    implementation(Support.lifecycle)
     implementation(Ktx.viewModel)
     implementation(Ktx.core)
     implementation(Ktx.collections)
@@ -149,7 +148,6 @@ dependencies {
     implementation(Libs.toast)
     implementation(Libs.lovelydialog)
     implementation(Libs.flashbar)
-    implementation(Libs.materialEditText)
     implementation(Libs.shimmer)
     implementation(Libs.gif)
     implementation(Libs.animations1)
