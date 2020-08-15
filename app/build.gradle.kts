@@ -117,6 +117,7 @@ dependencies {
     implementation(Ktx.viewModel)
     implementation(Ktx.core)
     implementation(Ktx.collections)
+    implementation(Ktx.workManager)
     implementation(Navigation.navigationFragments)
     implementation(Navigation.navigationUI)
     implementation(RxJava.rxJava2)
