@@ -12,13 +12,13 @@ repositories {
 
 dependencies {
     implementation("com.android.tools.build:gradle:4.0.1")
-    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.72")
+    implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.0")
     implementation(gradleApi())
     implementation(localGroovy())
     implementation("com.beust:klaxon:5.0.1")
     implementation("com.google.code.gson:gson:2.8.6")
-    implementation("com.squareup.okhttp3:okhttp:4.4.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.4.0")
+    implementation("com.squareup.okhttp3:okhttp:4.8.1")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.8.1")
     implementation("com.squareup.retrofit2:retrofit:2.7.1") {
         exclude("com.squareup.okhttp3", "okhttp")
     }

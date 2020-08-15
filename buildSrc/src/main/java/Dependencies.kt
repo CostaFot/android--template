@@ -1,11 +1,5 @@
 @file:Suppress("SpellCheckingInspection")
 
-object Sdk {
-    const val MIN_SDK_VERSION = 21
-    const val TARGET_SDK_VERSION = 29
-    const val COMPILE_SDK_VERSION = 29
-}
-
 object Support {
     const val appCompat = "androidx.appcompat:appcompat:1.3.0-alpha01"
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.0.0-rc1"
