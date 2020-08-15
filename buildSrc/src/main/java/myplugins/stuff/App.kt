@@ -1,4 +1,4 @@
-package plugins.stuff
+package myplugins.stuff
 
 import com.beust.klaxon.Klaxon
 import com.beust.klaxon.PathMatcher
@@ -46,10 +46,11 @@ fun chop() {
 
     updateBuildConstants(allDepsMap.values)
 
-    val hasUpdatedAndroidGradle = updateAndroidGradle(allDepsMap["com.android.tools.build:gradle"])
+    val hasUpdatedAndroidGradle =
+        updateAndroidGradle(allDepsMap["com.android.tools.build:gradle"])
 
     //update gradle wrapper
-    updateGradleWrapper(results)
+    // updateGradleWrapper(results)
 
     /*// git stuff to finish
     if (hasUpdated)
