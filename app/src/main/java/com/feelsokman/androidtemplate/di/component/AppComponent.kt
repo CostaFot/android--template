@@ -6,6 +6,7 @@ import com.feelsokman.androidtemplate.di.module.ActivityBuilderModule
 import com.feelsokman.androidtemplate.di.module.AppModule
 import com.feelsokman.androidtemplate.di.module.NetworkModule
 import com.feelsokman.androidtemplate.di.module.UseCaseModule
+import com.feelsokman.androidtemplate.di.module.ViewModelModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -19,7 +20,8 @@ import javax.inject.Singleton
         ActivityBuilderModule::class,
         AppModule::class,
         NetworkModule::class,
-        UseCaseModule::class
+        UseCaseModule::class,
+        ViewModelModule::class
     ]
 )
 interface AppComponent : AndroidInjector<TemplateApplication> {

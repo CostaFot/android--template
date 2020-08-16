@@ -7,8 +7,11 @@ import com.feelsokman.androidtemplate.net.domain.JsonPlaceHolderClient
 import com.feelsokman.androidtemplate.result.fold
 import kotlinx.coroutines.launch
 import timber.log.Timber
+import javax.inject.Inject
 
-class HostViewModel(private val jsonPlaceHolderClient: JsonPlaceHolderClient) : ViewModel() {
+class HostViewModel @Inject constructor(
+    private val jsonPlaceHolderClient: JsonPlaceHolderClient
+) : ViewModel() {
 
     val textData = MutableLiveData<String>()
 

@@ -7,13 +7,12 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.observe
 import com.feelsokman.androidtemplate.databinding.FragmentHostBinding
 import com.feelsokman.androidtemplate.extensions.logDebug
 import com.feelsokman.androidtemplate.ui.activity.viewmodel.MainViewModel
 import com.feelsokman.androidtemplate.ui.base.BaseFragment
 import com.feelsokman.androidtemplate.ui.fragments.host.viewmodel.HostViewModel
-import com.feelsokman.androidtemplate.ui.fragments.host.viewmodel.HostViewModelFactory
+import com.feelsokman.androidtemplate.utilities.viewmodel.ViewModelFactory
 import javax.inject.Inject
 
 class HostFragment : BaseFragment(), ViewBinder.Callback {
@@ -21,16 +20,14 @@ class HostFragment : BaseFragment(), ViewBinder.Callback {
         //
     }
 
-    @Inject
-    internal lateinit var factory: HostViewModelFactory
-    // Get a reference to the ViewModel scoped to this Fragment
-    private val viewModelHost by viewModels<HostViewModel> { factory }
-    // Get a reference to the ViewModel scoped to its Activity
+    @Inject internal lateinit var viewModelFactory: ViewModelFactory
+    private val viewModelHost by viewModels<HostViewModel> { viewModelFactory }
     private val activityViewModel by activityViewModels<MainViewModel>()
 
     private lateinit var viewBinder: ViewBinder
 
     private var _binding: FragmentHostBinding? = null
+
     // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
 
