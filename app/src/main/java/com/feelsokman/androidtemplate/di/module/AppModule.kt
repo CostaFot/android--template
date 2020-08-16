@@ -4,8 +4,8 @@ import android.app.Application
 import android.content.Context
 import android.content.res.Resources
 import com.feelsokman.androidtemplate.BuildConfig
-import com.feelsokman.androidtemplate.coroutine.DefaultDispatcherProvider
-import com.feelsokman.androidtemplate.coroutine.DispatcherProvider
+import com.feelsokman.androidtemplate.core.coroutine.DefaultDispatcherProvider
+import com.feelsokman.androidtemplate.core.coroutine.DispatcherProvider
 import com.feelsokman.androidtemplate.preferences.AppPreferences
 import com.feelsokman.androidtemplate.preferences.LocalAppPreferences
 import com.google.firebase.analytics.FirebaseAnalytics
@@ -51,11 +51,6 @@ class AppModule {
     @Provides
     fun providesFirebaseAnalytics(applicationContext: Context): FirebaseAnalytics {
         return FirebaseAnalytics.getInstance(applicationContext)
-    }
-
-    @Provides
-    fun providesDebugFlag(): Boolean {
-        return BuildConfig.DEBUG
     }
 
     @Provides

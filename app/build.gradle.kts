@@ -141,7 +141,6 @@ dependencies {
     implementation(Dagger.dagger)
     kapt(Dagger.compiler)
     implementation(Dagger.android)
-    implementation(Dagger.androidSupport)
     kapt(Dagger.processor)
     implementation(Libs.kotlinpref)
     implementation(Libs.timberLogger)
@@ -157,6 +156,8 @@ dependencies {
     debugImplementation(Libs.leakCanary)
     implementation(Firebase.analytics)
     implementation(Firebase.crashlytics)
+    implementation(Libs.stetho)
+    implementation(Libs.stethoOkHttp)
 
     testImplementation(TestingLib.jUnit)
     testImplementation(TestingLib.jUnitKotlin)

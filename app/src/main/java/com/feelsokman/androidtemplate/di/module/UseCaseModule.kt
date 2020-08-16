@@ -7,7 +7,8 @@ import dagger.Provides
 import io.reactivex.Scheduler
 
 @Module
-class UseCaseModule {
+object UseCaseModule {
+
     @Provides
     internal fun providesGetStringFromStorageUseCase(
         scheduler: Scheduler,

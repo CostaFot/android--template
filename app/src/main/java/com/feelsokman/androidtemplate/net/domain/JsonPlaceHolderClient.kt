@@ -1,6 +1,6 @@
 package com.feelsokman.androidtemplate.net.domain
 
-import com.feelsokman.androidtemplate.coroutine.DispatcherProvider
+import com.feelsokman.androidtemplate.core.coroutine.DispatcherProvider
 import com.feelsokman.androidtemplate.net.domain.model.DomainTodo
 import com.feelsokman.androidtemplate.net.net.JsonPlaceHolderService
 import com.feelsokman.androidtemplate.result.Result

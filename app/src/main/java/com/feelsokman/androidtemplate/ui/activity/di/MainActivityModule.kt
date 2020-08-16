@@ -1,13 +1,17 @@
 package com.feelsokman.androidtemplate.ui.activity.di
 
-import com.feelsokman.androidtemplate.ui.activity.viewmodel.MainViewModelFactory
-import com.feelsokman.androidtemplate.usecase.GetStringFromStorageUseCase
+import androidx.lifecycle.ViewModel
+import com.feelsokman.androidtemplate.di.module.ViewModelKey
+import com.feelsokman.androidtemplate.ui.activity.viewmodel.MainViewModel
+import dagger.Binds
 import dagger.Module
-import dagger.Provides
+import dagger.multibindings.IntoMap
 
 @Module
-class MainActivityModule {
-    @Provides
-    internal fun providesMainViewModelFactory(getStringFromStorageUseCase: GetStringFromStorageUseCase) =
-        MainViewModelFactory(getStringFromStorageUseCase)
+abstract class MainActivityModule {
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(MainViewModel::class)
+    abstract fun bindMainViewModel(viewModel: MainViewModel): ViewModel
 }

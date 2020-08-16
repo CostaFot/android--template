@@ -4,29 +4,30 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.activity.viewModels
-import androidx.lifecycle.observe
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.feelsokman.androidtemplate.R
+import com.feelsokman.androidtemplate.di.component.AppComponent
+import com.feelsokman.androidtemplate.di.getComponent
 import com.feelsokman.androidtemplate.extensions.logDebug
 import com.feelsokman.androidtemplate.ui.activity.viewmodel.MainViewModel
-import com.feelsokman.androidtemplate.ui.activity.viewmodel.MainViewModelFactory
 import com.feelsokman.androidtemplate.ui.base.BaseActivity
+import com.feelsokman.androidtemplate.utilities.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 class MainActivity : BaseActivity() {
 
-    @Inject
-    internal lateinit var factoryMainViewModel: MainViewModelFactory
+    @Inject internal lateinit var viewModelFactory: ViewModelFactory
 
-    private val mainViewModel by viewModels<MainViewModel> { factoryMainViewModel }
+    private val mainViewModel by viewModels<MainViewModel> { viewModelFactory }
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        injectDependencies()
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -63,4 +64,9 @@ class MainActivity : BaseActivity() {
         menuInflater.inflate(R.menu.toolbar_menu, menu)
         return true
     }
+
+    override fun injectDependencies() {
+        application.getComponent<AppComponent>().inject(this)
+    }
+
 }

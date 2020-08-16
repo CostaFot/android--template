@@ -2,7 +2,9 @@ package com.feelsokman.androidtemplate.di.module
 
 import android.content.Context
 import android.net.ConnectivityManager
-import com.feelsokman.androidtemplate.coroutine.DispatcherProvider
+import com.facebook.stetho.okhttp3.StethoInterceptor
+import com.feelsokman.androidtemplate.core.coroutine.DispatcherProvider
+import com.feelsokman.androidtemplate.core.features.FlagProvider
 import com.feelsokman.androidtemplate.net.connectivity.ConnectivityChecker
 import com.feelsokman.androidtemplate.net.domain.JsonPlaceHolderClient
 import com.feelsokman.androidtemplate.net.net.JsonPlaceHolderService
@@ -18,7 +20,7 @@ import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
-class NetworkModule {
+object NetworkModule {
 
     @Provides
     internal fun providesNetworkResolver(applicationContext: Context): ConnectivityChecker {
@@ -35,11 +37,11 @@ class NetworkModule {
     @Provides
     @Singleton
     internal fun providesHttpLoggingInterceptor(
-        isDebugEnabled: Boolean
+        flagProvider: FlagProvider
     ): HttpLoggingInterceptor {
         return HttpLoggingInterceptor().apply {
             level = when {
-                isDebugEnabled -> HttpLoggingInterceptor.Level.BODY
+                flagProvider.isDebugEnabled -> HttpLoggingInterceptor.Level.BODY
                 else -> HttpLoggingInterceptor.Level.NONE
             }
         }
@@ -49,12 +51,16 @@ class NetworkModule {
     @Singleton
     internal fun providesOkHttpClient(
         cache: Cache,
-        httpLoggingInterceptor: HttpLoggingInterceptor
+        httpLoggingInterceptor: HttpLoggingInterceptor,
+        flagProvider: FlagProvider
     ): OkHttpClient {
         return OkHttpClient().newBuilder()
             .apply {
                 addInterceptor(httpLoggingInterceptor)
                 cache(cache)
+                if (flagProvider.isDebugEnabled) {
+                    addNetworkInterceptor(StethoInterceptor())
+                }
             }.build()
     }
 

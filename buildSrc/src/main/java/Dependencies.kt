@@ -41,6 +41,8 @@ object Libs {
     const val rxView = "com.jakewharton.rxbinding2:rxbinding:2.1.1"
     const val rxViewV7 = "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.1.1"
     const val rxViewDesign = "com.jakewharton.rxbinding2:rxbinding-design:2.1.1"
+    const val stetho = "com.facebook.stetho:stetho:1.5.1"
+    const val stethoOkHttp = "com.facebook.stetho:stetho-okhttp3:1.5.1"
 }
 
 object RxJava {

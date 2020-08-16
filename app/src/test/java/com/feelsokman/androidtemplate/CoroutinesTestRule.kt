@@ -1,6 +1,6 @@
 package com.feelsokman.androidtemplate
 
-import com.feelsokman.androidtemplate.coroutine.DispatcherProvider
+import com.feelsokman.androidtemplate.core.coroutine.DispatcherProvider
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

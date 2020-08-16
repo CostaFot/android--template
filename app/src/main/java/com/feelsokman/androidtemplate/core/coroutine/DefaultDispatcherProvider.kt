@@ -1,8 +1,10 @@
-package com.feelsokman.androidtemplate.coroutine
+package com.feelsokman.androidtemplate.core.coroutine
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import javax.inject.Singleton
 
+@Singleton
 class DefaultDispatcherProvider(
     override val ui: CoroutineDispatcher = Dispatchers.Main,
     override val default: CoroutineDispatcher = Dispatchers.Default,
