@@ -6,6 +6,7 @@ import com.feelsokman.androidtemplate.di.module.AppModule
 import com.feelsokman.androidtemplate.di.module.NetworkModule
 import com.feelsokman.androidtemplate.di.module.UseCaseModule
 import com.feelsokman.androidtemplate.di.module.ViewModelModule
+import com.feelsokman.androidtemplate.di.module.WorkModule
 import com.feelsokman.androidtemplate.ui.activity.MainActivity
 import com.feelsokman.androidtemplate.ui.activity.di.MainActivityModule
 import com.feelsokman.androidtemplate.ui.fragments.another.AnotherFragment
@@ -22,6 +23,7 @@ import javax.inject.Singleton
         AppModule::class,
         NetworkModule::class,
         UseCaseModule::class,
+        WorkModule::class,
         ViewModelModule::class,
         HostViewModelsModule::class,
         AnotherViewModelsModule::class,
@@ -55,7 +57,6 @@ interface AppComponent {
                 .application(application)
                 .build()
 
-            instance.inject(application as TemplateApplication)
             return instance
         }
     }

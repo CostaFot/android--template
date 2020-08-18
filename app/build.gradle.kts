@@ -117,7 +117,6 @@ dependencies {
     implementation(Ktx.viewModel)
     implementation(Ktx.core)
     implementation(Ktx.collections)
-    implementation(Ktx.workManager)
     implementation(Navigation.navigationFragments)
     implementation(Navigation.navigationUI)
     implementation(RxJava.rxJava2)
@@ -158,6 +157,7 @@ dependencies {
     implementation(Firebase.crashlytics)
     implementation(Libs.stetho)
     implementation(Libs.stethoOkHttp)
+    implementation(WorkManager.workManager)
 
     testImplementation(TestingLib.jUnit)
     testImplementation(TestingLib.jUnitKotlin)

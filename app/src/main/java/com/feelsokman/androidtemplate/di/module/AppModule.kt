@@ -76,4 +76,5 @@ class AppModule {
     @Provides
     @Singleton
     internal fun providesPreferences(context: Context): AppPreferences = LocalAppPreferences(context)
+
 }

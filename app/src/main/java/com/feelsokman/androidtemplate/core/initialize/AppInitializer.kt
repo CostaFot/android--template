@@ -30,7 +30,6 @@ class AppInitializer @Inject constructor(
             Timber.plant(Timber.DebugTree())
             logDebug { "Timber initialised" }
         }
-        logDebug { "onCreate application" }
     }
 
     private fun initStetho(application: Application) {

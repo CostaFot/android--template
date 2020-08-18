@@ -96,6 +96,10 @@ object Retrofit {
     const val loggingInterceptor = "com.squareup.okhttp3:logging-interceptor:4.8.1"
 }
 
+object WorkManager {
+    const val workManager = "androidx.work:work-runtime-ktx:2.4.0"
+}
+
 object Ktx {
     const val core = "androidx.core:core-ktx:1.5.0-alpha01"
     const val fragment = "androidx.fragment:fragment-ktx:1.2.5"
@@ -104,7 +108,6 @@ object Ktx {
     const val sqlite = "androidx.sqlite:sqlite-ktx:1.0.0"
     const val collections = "androidx.collection:collection-ktx:1.1.0"
     const val reactiveStreams = "androidx.lifecycle:lifecycle-reactivestreams-ktx:2.2.0"
-    const val workManager = "android.arch.work:work-runtime-ktx:1.0.1"
     const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
     const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
     const val savedState = "androidx.savedstate:savedstate-ktx:1.1.0-alpha01"
