@@ -37,9 +37,9 @@ tasks.register("clean", Delete::class.java) {
 
 val dependenciesAndVersions: MutableMap<String, MutableSet<String>> = mutableMapOf()
 
-tasks.register("customTask", myplugins.greet.CustomDependencyUpdatesTask::class.java) {
+/*tasks.register("customTask", myplugins.greet.CustomDependencyUpdatesTask::class.java) {
     this.resolvedDependencies = dependenciesAndVersions
-}
+}*/
 
 tasks.named<DependencyUpdatesTask>("dependencyUpdates") {
     fun isBetaRc(version: String) = listOf("alpha", "beta", "rc", "cr", "m", "preview", "SNAPSHOT")
@@ -63,5 +63,5 @@ tasks.named<DependencyUpdatesTask>("dependencyUpdates") {
     }
     outputFormatter = "json"
 
-    finalizedBy(tasks.findByName("customTask"))
+    //finalizedBy(tasks.findByName("customTask"))
 }
