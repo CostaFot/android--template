@@ -53,7 +53,8 @@ android {
         }
     }
 
-    flavorDimensions("style", "monetize")
+    flavorDimensions.addAll(listOf("style", "monetize"))
+
     productFlavors {
         create("templateStyle") {
             dimension = "style"
@@ -95,9 +96,9 @@ android {
         viewBinding = true
     }
 
-    lintOptions {
-        isWarningsAsErrors = true
-        isAbortOnError = true
+    lint {
+        warningsAsErrors = true
+        abortOnError = true
     }
 }
 
@@ -134,8 +135,6 @@ dependencies {
 
     implementation(Dagger.dagger)
     kapt(Dagger.compiler)
-    implementation(Dagger.android)
-    kapt(Dagger.processor)
     implementation(Libs.kotlinpref)
     implementation(Libs.timberLogger)
 

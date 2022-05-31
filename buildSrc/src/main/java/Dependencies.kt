@@ -70,9 +70,6 @@ object Navigation {
 object Dagger {
     const val dagger = "com.google.dagger:dagger:2.28.3"
     const val compiler = "com.google.dagger:dagger-compiler:2.28.3"
-    const val android = "com.google.dagger:dagger-android:2.28.3"
-    const val androidSupport = "com.google.dagger:dagger-android-support:2.28.3"
-    const val processor = "com.google.dagger:dagger-android-processor:2.28.3"
 }
 
 object Room {
