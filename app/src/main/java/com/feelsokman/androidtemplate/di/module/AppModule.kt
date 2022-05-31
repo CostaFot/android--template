@@ -11,10 +11,8 @@ import com.feelsokman.androidtemplate.preferences.LocalAppPreferences
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
-import com.squareup.otto.Bus
 import dagger.Module
 import dagger.Provides
-import io.reactivex.schedulers.Schedulers
 import okhttp3.Cache
 import javax.inject.Named
 import javax.inject.Singleton
@@ -45,10 +43,6 @@ class AppModule {
     }
 
     @Provides
-    @Singleton
-    fun providesBus(): Bus = Bus()
-
-    @Provides
     fun providesFirebaseAnalytics(applicationContext: Context): FirebaseAnalytics {
         return FirebaseAnalytics.getInstance(applicationContext)
     }
@@ -63,9 +57,6 @@ class AppModule {
     fun providesGson(): Gson {
         return GsonBuilder().setPrettyPrinting().create()
     }
-
-    @Provides
-    internal fun providesExecutionScheduler() = Schedulers.io()
 
     @Singleton
     @Provides

@@ -24,6 +24,7 @@
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
+                app:title="ewdfwfwfw"
                 android:layout_height="?attr/actionBarSize"
                 android:theme="@style/Widget.App.DefaultToolbar">
 
@@ -32,7 +33,7 @@
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_info"
+                    android:src="@drawable/ic_launcher_foreground"
                     app:tint="?attr/colorControlHighlight"
                     tools:ignore="ContentDescription" />
 
@@ -51,7 +52,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appbar"
-            app:navGraph="@navigation/nav_graph" />
+            app:navGraph="@navigation/nav_graph"
+            tools:layout="@layout/fragment_host" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

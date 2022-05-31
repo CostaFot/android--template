@@ -74,8 +74,7 @@
         <item name="textAppearanceOverline">@style/TextAppearance.App.Overline</item>
 
         <!--Component styles-->
-        <item name="materialAlertDialogTheme">@style/ThemeOverlay.MaterialComponents.Dialog.Alert
-        </item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.MaterialComponents.Dialog.Alert</item>
         <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.PrimarySurface</item>
     </style>
 
@@ -119,9 +118,7 @@
 
 
     <style name="Base.MaterialThemeBuilder" parent="Theme.MaterialComponents.Light.NoActionBar">
-        <item name="android:navigationBarDividerColor" tools:ignore="NewApi">
-            ?colorControlHighlight
-        </item>
+        <item name="android:navigationBarDividerColor" tools:ignore="NewApi">?colorControlHighlight</item>
 
         <!--Remap legacy AppCompat attributes to MaterialComponent attributes-->
         <item name="colorPrimaryDark">?colorPrimaryVariant</item>

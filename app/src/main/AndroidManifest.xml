@@ -10,16 +10,15 @@
 
     <application
         android:name=".TemplateApplication"
-        android:allowBackup="false"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.App"
-        tools:ignore="AllowBackup,GoogleAppIndexingWarning">
+        android:theme="@style/Theme.App">
         <activity
             android:name=".ui.activity.MainActivity"
-            android:launchMode="singleTop">
+            android:launchMode="singleTop"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

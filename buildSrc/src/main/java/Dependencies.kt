@@ -1,12 +1,11 @@
 @file:Suppress("SpellCheckingInspection")
 
 object Support {
-    const val appCompat = "androidx.appcompat:appcompat:1.3.0-alpha01"
-    const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.0.0-rc1"
-    const val recyclerview = "androidx.recyclerview:recyclerview:1.2.0-alpha05"
-    const val annotations = "androidx.annotation:annotation:1.1.0"
+    const val appCompat = "androidx.appcompat:appcompat:1.4.1"
+    const val constraintLayout = "androidx.constraintlayout:constraintlayout:2.1.4"
+    const val recyclerview = "androidx.recyclerview:recyclerview:1.2.1"
+    const val annotations = "androidx.annotation:annotation:1.3.0"
     const val material = "com.google.android.material:material:1.3.0-alpha02"
-    const val cardViewX = "androidx.cardview:cardview:1.0.0"
 }
 
 object Libs {
@@ -64,8 +63,8 @@ object Imaging {
 }
 
 object Navigation {
-    const val navigationFragments = "androidx.navigation:navigation-fragment-ktx:2.3.0"
-    const val navigationUI = "androidx.navigation:navigation-ui-ktx:2.3.0"
+    const val navigationFragments = "androidx.navigation:navigation-fragment-ktx:2.3.5"
+    const val navigationUI = "androidx.navigation:navigation-ui-ktx:2.3.5"
 }
 
 object Dagger {
@@ -101,39 +100,32 @@ object WorkManager {
 }
 
 object Ktx {
-    const val core = "androidx.core:core-ktx:1.5.0-alpha01"
-    const val fragment = "androidx.fragment:fragment-ktx:1.2.5"
-    const val preference = "androidx.preference:preference-ktx:1.1.0"
-    const val palette = "androidx.palette:palette-ktx:1.0.0"
-    const val sqlite = "androidx.sqlite:sqlite-ktx:1.0.0"
+    const val core = "androidx.core:core-ktx:1.7.0"
+    const val fragment = "androidx.fragment:fragment-ktx:1.4.1"
+    const val activity = "androidx.activity:activity-ktx:1.4.0"
     const val collections = "androidx.collection:collection-ktx:1.1.0"
-    const val reactiveStreams = "androidx.lifecycle:lifecycle-reactivestreams-ktx:2.2.0"
-    const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
-    const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
-    const val savedState = "androidx.savedstate:savedstate-ktx:1.1.0-alpha01"
+    const val reactiveStreams = "androidx.lifecycle:lifecycle-reactivestreams-ktx:2.4.1"
+    const val liveData = "androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
+    const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
+    const val savedState = "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.4.1"
 }
 
 object TestingLib {
-    const val jUnit = "androidx.test.ext:junit:1.1.2-rc03"
-    const val jUnitKotlin = "org.jetbrains.kotlin:kotlin-test-junit:1.4.0"
-    const val testCoreX = "androidx.test:core:1.3.0-rc03"
-    const val testArchCompX = "androidx.arch.core:core-testing:2.1.0"
+    const val jUnit = "androidx.test.ext:junit-ktx:1.1.3"
+    const val testCoreX = "androidx.test:core-ktx:1.4.0"
     const val robolectric = "org.robolectric:robolectric:4.3"
     const val mockitoCore = "org.mockito:mockito-core:3.4.6"
     const val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0"
     const val mockitoInline = "org.mockito:mockito-inline:3.4.6"
-    const val runner = "androidx.test:runner:1.3.0-rc03"
-    const val espresso = "androidx.test.espresso:espresso-core:3.3.0-rc03"
-    const val espressoContrib = "androidx.test.espresso:espresso-contrib:3.1.0"
-    const val espressoIdleConcurrent = "androidx.test.espresso.idling:idling-concurrent:3.1.0"
-    const val espressoIdleResources = "androidx.test.espresso:espresso-idling-resource:3.1.0"
-    const val espressoIntents = "androidx.test.espresso:espresso-intents:3.3.0-rc03"
-    const val rules = "androidx.test:rules:1.3.0-rc03"
-    const val truth = "androidx.test.ext:truth:1.3.0-rc03"
+    const val runner = "androidx.test:runner:1.4.0"
+    const val espresso = "androidx.test:espresso:espresso-core:3.4.0"
+    const val espressoContrib = "androidx.test.espresso:espresso-contrib:3.4.0"
+    const val espressoIdleConcurrent = "androidx.test.espresso.idling:idling-concurrent:3.4.0"
+    const val espressoIdleResources = "androidx.test.espresso:espresso-idling-resource:3.4.0"
+    const val espressoIntents = "androidx.test.espresso:espresso-intents:3.4.0"
+    const val rules = "androidx.test:rules:1.4.0"
+    const val truth = "androidx.test.ext:truth:1.4.0"
     const val kluent = "org.amshove.kluent:kluent:1.61"
     const val coroutineTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.9"
-
-    // use debugImplementation for fragment scenario!
-    const val fragmentScenario = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.3.9"
-    const val kakaoUiTesting = "com.agoda.kakao:kakao:2.0.0"
+    const val testArchCompX = "androidx.arch.core:core-testing:2.1.0"
 }

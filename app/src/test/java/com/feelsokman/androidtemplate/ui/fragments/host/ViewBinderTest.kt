@@ -4,7 +4,7 @@ import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.test.core.app.ApplicationProvider
-import androidx.test.runner.AndroidJUnit4
+import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.feelsokman.androidtemplate.R
 import org.junit.Assert.assertTrue
 import org.junit.Before

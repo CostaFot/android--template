@@ -1,10 +1,8 @@
 package com.feelsokman.androidtemplate.usecase
 
 import com.feelsokman.androidtemplate.preferences.AppPreferences
-import io.reactivex.Scheduler
 
 class GetStringFromStorageUseCase(
-    private val scheduler: Scheduler,
     private val appPreferences: AppPreferences
 ) {
 

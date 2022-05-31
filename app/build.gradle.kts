@@ -9,12 +9,12 @@ plugins {
 }
 
 android {
-    compileSdkVersion(Sdk.COMPILE_SDK_VERSION)
+    compileSdk = Sdk.COMPILE_SDK_VERSION
     testOptions.unitTests.isIncludeAndroidResources = true
 
     defaultConfig {
-        minSdkVersion(Sdk.MIN_SDK_VERSION)
-        targetSdkVersion(Sdk.TARGET_SDK_VERSION)
+        minSdk = Sdk.MIN_SDK_VERSION
+        targetSdk = Sdk.TARGET_SDK_VERSION
 
         applicationId = AppCoordinates.APP_ID
         versionCode = AppCoordinates.APP_VERSION_CODE
@@ -35,7 +35,7 @@ android {
     }
 
     buildTypes {
-        releaseBuild {
+        getByName("release") {
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -45,7 +45,7 @@ android {
             versionNameSuffix = "-release"
         }
 
-        debugBuild {
+        getByName("debug") {
             isMinifyEnabled = false
             isDebuggable = true
             applicationIdSuffix = ".debug"
@@ -106,10 +106,10 @@ dependencies {
 
     implementation(Support.appCompat)
     implementation(Support.material)
-    implementation(Support.cardViewX)
     implementation(Support.constraintLayout)
     implementation(Support.recyclerview)
     implementation(Support.annotations)
+    implementation(Ktx.activity)
     implementation(Ktx.fragment)
     implementation(Ktx.liveData)
     implementation(Ktx.savedState)
@@ -118,10 +118,7 @@ dependencies {
     implementation(Ktx.collections)
     implementation(Navigation.navigationFragments)
     implementation(Navigation.navigationUI)
-    implementation(RxJava.rxJava2)
-    implementation(RxJava.rxAndroid)
-    implementation(Permissions.rx)
-    implementation(Libs.rxBindingMaterial)
+
     implementation(Libs.gson)
     implementation(Retrofit.okHttp)
     implementation(Retrofit.loggingInterceptor)
@@ -135,7 +132,6 @@ dependencies {
         exclude("io.reactivex.rxjava2", "rxjava")
     }
 
-    implementation(Libs.reactiveNetwork)
     implementation(Dagger.dagger)
     kapt(Dagger.compiler)
     implementation(Dagger.android)
@@ -143,14 +139,6 @@ dependencies {
     implementation(Libs.kotlinpref)
     implementation(Libs.timberLogger)
 
-    implementation(Libs.toast)
-    implementation(Libs.lovelydialog)
-    implementation(Libs.flashbar)
-    implementation(Libs.shimmer)
-    implementation(Libs.gif)
-    implementation(Libs.animations1)
-    implementation(Libs.animations2)
-    implementation(Libs.otto)
     debugImplementation(Libs.leakCanary)
     implementation(Firebase.analytics)
     implementation(Firebase.crashlytics)
@@ -159,7 +147,6 @@ dependencies {
     implementation(WorkManager.workManager)
 
     testImplementation(TestingLib.jUnit)
-    testImplementation(TestingLib.jUnitKotlin)
     implementation(TestingLib.testCoreX)
 
     testImplementation(TestingLib.testArchCompX)
@@ -176,13 +163,9 @@ dependencies {
     testImplementation(TestingLib.coroutineTest)
 
     androidTestImplementation(TestingLib.jUnit)
-    androidTestImplementation(TestingLib.jUnitKotlin)
     androidTestImplementation(TestingLib.testCoreX)
     androidTestImplementation(TestingLib.runner)
     androidTestImplementation(TestingLib.espresso)
-
-    debugImplementation(TestingLib.fragmentScenario)
-
 }
 
 

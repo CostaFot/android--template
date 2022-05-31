@@ -12,8 +12,6 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import androidx.core.view.ViewCompat
-import com.squareup.otto.Bus
-
 /**
  * Button enabling/disabling modifiers
  */
@@ -99,12 +97,4 @@ fun View.applyWindowInsets(applyTopInset: Boolean = true, applyOtherInsets: Bool
         // Listener is not needed
         ViewCompat.setOnApplyWindowInsetsListener(this, null)
     }
-}
-
-fun View.registerBus(bus: Bus) {
-    bus.register(this)
-}
-
-fun View.unregisterBus(bus: Bus) {
-    bus.unregister(this)
 }

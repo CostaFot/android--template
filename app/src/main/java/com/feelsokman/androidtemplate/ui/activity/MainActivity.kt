@@ -29,9 +29,11 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         injectDependencies()
         super.onCreate(savedInstanceState)
+        mainViewModel.textData.observe(this) {
+            logDebug { "MainActivity $it" }
+        }
         setContentView(R.layout.activity_main)
 
-        // Initial setup!
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         val navController = findNavController(R.id.nav_host_fragment)
@@ -43,10 +45,6 @@ class MainActivity : BaseActivity() {
                 R.id.hostFragment -> logDebug { "hostFragment showing!" }
                 R.id.anotherFragment -> logDebug { "anotherFragment showing!" }
             }
-        }
-
-        mainViewModel.textData.observe(this) {
-            logDebug { "MainActivity $it" }
         }
     }
 
@@ -60,7 +58,7 @@ class MainActivity : BaseActivity() {
         return item.onNavDestinationSelected(navController)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.toolbar_menu, menu)
         return true
     }

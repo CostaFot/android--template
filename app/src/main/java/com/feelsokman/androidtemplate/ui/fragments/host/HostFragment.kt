@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
 import androidx.work.Constraints
 import androidx.work.NetworkType
 import androidx.work.OneTimeWorkRequestBuilder
@@ -54,9 +53,9 @@ class HostFragment : BaseFragment(), ViewBinder.Callback {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        activityViewModel.textData.observe(viewLifecycleOwner, Observer {
+        activityViewModel.textData.observe(viewLifecycleOwner) {
             logDebug { "HostFragment Activity string is $it" }
-        })
+        }
 
         viewModelHost.textData.observe(viewLifecycleOwner) {
             if (!it.isNullOrBlank()) {
