@@ -5,6 +5,7 @@
     <style name="Theme.App" parent="Theme.App.Purple" />
 
     <style name="Theme.App.Purple" parent="Base.MaterialThemeBuilder">
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
         <!--Material color attributes -->
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryVariant">@color/color_primary_variant</item>
